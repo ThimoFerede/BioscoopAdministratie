@@ -9,17 +9,21 @@ namespace BioscoopAdministration
 {
     public class Bezoeker : Persoon
     {
-        public Bestelling bestelling { get; private set; }
+        public Bestelling Bestelling { get; private set; }
         public Bezoeker
             (
                 string naam,
                 string adres,
                 string woonplaats,
-                DateTime geboortedatum,
-                Bestelling bestelling
+                DateTime geboortedatum
             ) : base(naam, adres, woonplaats, geboortedatum)
         {
-            this.bestelling = bestelling;
+            
+        }
+
+        public void VoegBestellingToe(Bestelling bestelling)
+        {
+            this.Bestelling = bestelling;
         }
 
         public override string ToString()

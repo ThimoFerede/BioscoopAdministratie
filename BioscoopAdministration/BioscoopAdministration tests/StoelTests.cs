@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace BioscoopAdministration_tests
 {
     [TestClass]
-    public class UnitTest1
+    public class StoelTests
     {
         [TestMethod]
         public void TestMethod1()

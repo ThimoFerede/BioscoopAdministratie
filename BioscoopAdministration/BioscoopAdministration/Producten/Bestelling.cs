@@ -9,7 +9,7 @@ namespace BioscoopAdministration.Producten
     public class Bestelling : IPrice
     {
         public int BestellingsID { get; private set; }
-        public Bezoeker bezoeker { get; private set; }
+        public Bezoeker Bezoeker { get; private set; }
 
         public int Price
         {
@@ -18,7 +18,8 @@ namespace BioscoopAdministration.Producten
         public Bestelling(int bestellingsID, Bezoeker bezoeker)
         {
             BestellingsID = bestellingsID;
-            this.bezoeker = bezoeker;
+            Bezoeker = bezoeker;
+            Bezoeker.VoegBestellingToe(this);
         }
 
         public override string ToString()
