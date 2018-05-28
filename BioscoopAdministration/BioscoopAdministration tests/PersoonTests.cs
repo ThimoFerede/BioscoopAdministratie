@@ -1,10 +1,10 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace UnitTestFilm
+namespace BioscoopAdministration_tests
 {
     [TestClass]
-    public class BioscoopvertoningTests
+    public class PersoonTests
     {
         [TestMethod]
         public void TestMethod1()
