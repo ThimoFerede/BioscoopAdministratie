@@ -11,6 +11,7 @@ namespace BioscoopAdministration
     {
         public int Toegangscode { get; private set; }
         public List<Uitlening> Uitleningen { get; private set; }
+        public double PrijsPerDag { get; private set; }
 
         public DigitaleKopie(
             string titel, 
@@ -19,12 +20,14 @@ namespace BioscoopAdministration
             string taal, 
             int leeftijdscategorie, 
             List<Genre> lijstGenres, 
-            int toegangscode)
+            int toegangscode,
+            double prijsPerDag)
             
             : base(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres)
         {
             Toegangscode = toegangscode;
             Uitleningen = new List<Uitlening>();
+            PrijsPerDag = prijsPerDag;
         }
 
         public DigitaleKopie(

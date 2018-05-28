@@ -55,7 +55,6 @@
     <Compile Include="FilmTests.cs" />
     <Compile Include="LidTests.cs" />
     <Compile Include="MedewerkerTests.cs" />
-    <Compile Include="PersoonTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BioscoopTests.cs" />
     <Compile Include="StoelTests.cs" />

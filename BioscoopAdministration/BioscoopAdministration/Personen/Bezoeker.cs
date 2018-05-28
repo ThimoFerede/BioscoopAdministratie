@@ -23,7 +23,7 @@ namespace BioscoopAdministration
 
         public void VoegBestellingToe(Bestelling bestelling)
         {
-            this.Bestelling = bestelling;
+            this.Bestelling = bestelling ?? throw new ArgumentNullException();
         }
 
         public override string ToString()
