@@ -23,7 +23,7 @@ namespace BioscoopAdministration_tests
             lijstGenres.Add(Film.Genre.Sciencefiction);
             int toegangscode = 8370;
 
-            DigitaleKopie dk = new DigitaleKopie(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres, toegangscode);
+            DigitaleKopie dk = new DigitaleKopie(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres, toegangscode, 3);
 
             Assert.AreEqual(titel, dk.Titel);
             Assert.AreEqual(jaar, dk.Jaar);
@@ -48,11 +48,9 @@ namespace BioscoopAdministration_tests
             lijstGenres.Add(Film.Genre.Sciencefiction);
             int toegangscode = 8370;
 
-            DigitaleKopie dk = new DigitaleKopie(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres, toegangscode);
+            DigitaleKopie dk = new DigitaleKopie(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres, toegangscode, 3);
             Lid l = new Lid("Piet", "weg", "Geldrop", DateTime.Now, "piet", "P8I9");
-            Uitlening u = new Uitlening(DateTime.Now, DateTime.Now, l);
-
-            dk.VoegUitleningToe(u);
+            Uitlening u = new Uitlening(DateTime.Now, DateTime.Now, dk, l);
 
             Assert.AreEqual(1, dk.Uitleningen.Count);
         }
@@ -72,7 +70,7 @@ namespace BioscoopAdministration_tests
             lijstGenres.Add(Film.Genre.Sciencefiction);
             int toegangscode = 8370;
 
-            DigitaleKopie dk = new DigitaleKopie(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres, toegangscode);
+            DigitaleKopie dk = new DigitaleKopie(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres, toegangscode, 3);
             Uitlening u = null;
 
             dk.VoegUitleningToe(u);
@@ -93,7 +91,7 @@ namespace BioscoopAdministration_tests
             int toegangscode = 8370;
             string dkString = "Ex Machina - 2014 - 108 minuten - Engels - 16 - " + lijstGenres.ToString() + " - 8370";
 
-            DigitaleKopie dk = new DigitaleKopie(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres, toegangscode);
+            DigitaleKopie dk = new DigitaleKopie(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres, toegangscode, 3);
 
             Assert.AreEqual(dkString, dk.ToString());
         }

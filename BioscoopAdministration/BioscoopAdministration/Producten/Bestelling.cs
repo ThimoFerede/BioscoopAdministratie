@@ -8,7 +8,6 @@ namespace BioscoopAdministration.Producten
 {
     public class Bestelling : IPrice
     {
-        public int BestellingsID { get; private set; }
         public Persoon Klant { get; private set; }
         public Bioscoopvertoning Bioscoopvertoning { get; private set; }
         public Stoel Stoel { get; private set; }
@@ -28,12 +27,10 @@ namespace BioscoopAdministration.Producten
         /// </summary>
         /// <param name="bestellingsID"></param>
         /// <param name="klant"></param>
-        public Bestelling(int bestellingsID, Persoon klant, Bioscoopvertoning bioscoopvertoning, Zaal zaal, Stoel stoel)
+        public Bestelling(Persoon klant, Bioscoopvertoning bioscoopvertoning, Stoel stoel)
         {
-            BestellingsID = bestellingsID;
             Klant = klant ?? throw new ArgumentNullException();
             Bioscoopvertoning = bioscoopvertoning ?? throw new ArgumentNullException();
-            Zaal = zaal ?? throw new ArgumentNullException();
             Stoel = stoel ?? throw new ArgumentNullException();
             if (klant is Bezoeker) (klant as Bezoeker).VoegBestellingToe(this);
             if (klant is Lid) (klant as Lid).VoegBestellingToe(this);
@@ -42,7 +39,7 @@ namespace BioscoopAdministration.Producten
 
         public override string ToString()
         {
-            return "Bestelling " + BestellingsID;
+            return "Bestelling";
         }
     }
 }

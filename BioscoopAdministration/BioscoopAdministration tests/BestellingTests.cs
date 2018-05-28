@@ -8,7 +8,6 @@ namespace BioscoopAdministration_tests
     [TestClass]
     public class BestellingTests
     {
-        private static int BestellingsID = 0;
         private static string naam = "Test Persoon";
         private static string adres = "Test Adres";
         private static string woonplaats = "Test Woonplaats";
@@ -32,10 +31,9 @@ namespace BioscoopAdministration_tests
         public void TestConstructor()
         {
             //Maak bestelling
-            Bestelling bestelling = new Bestelling(BestellingsID, bezoeker, bioscoopvertoning, zaal, zaal.Stoelen[0]);
+            Bestelling bestelling = new Bestelling(bezoeker, bioscoopvertoning, zaal.Stoelen[0]);
 
             //Test properties
-            Assert.AreEqual(BestellingsID, bestelling.BestellingsID);
             Assert.AreEqual(bezoeker, bestelling.Klant);
             Assert.AreEqual(bioscoopvertoning, bestelling.Bioscoopvertoning);
             Assert.AreEqual(zaal, bestelling.Zaal);
@@ -47,14 +45,14 @@ namespace BioscoopAdministration_tests
         public void TestConstructorMetNullParameters()
         {
             //Maak bestelling
-            Bestelling bestelling = new Bestelling(BestellingsID, null, null, null, null);
+            Bestelling bestelling = new Bestelling(null, null, null);
         }
 
         [TestMethod]
         public void TestBestellingBezoekerLink()
         {
             //Maak bestelling
-            Bestelling bestelling = new Bestelling(BestellingsID, bezoeker, bioscoopvertoning, zaal, zaal.Stoelen[0]);
+            Bestelling bestelling = new Bestelling(bezoeker, bioscoopvertoning, zaal.Stoelen[0]);
 
             //Test link (de bestelling is bereikbaar vanuit de bezoeker en andersom)
             Assert.AreEqual(bestelling, bezoeker.Bestelling);
@@ -67,7 +65,7 @@ namespace BioscoopAdministration_tests
             Lid lid = new Lid(naam, adres, woonplaats, geboortedatum, "Gebruikersnaam", "Wachtwoord");
 
             //Maak bestelling
-            Bestelling bestelling = new Bestelling(BestellingsID, lid, bioscoopvertoning, zaal, zaal.Stoelen[0]);
+            Bestelling bestelling = new Bestelling(lid, bioscoopvertoning, zaal.Stoelen[0]);
 
             //Test link (de bestelling is bereikbaar vanuit het lid en andersom)
             Assert.IsTrue(lid.Bestellingen.Contains(bestelling));
@@ -78,7 +76,7 @@ namespace BioscoopAdministration_tests
         public void TestPriceCalculation()
         {
             //Maak bestelling
-            Bestelling bestelling = new Bestelling(BestellingsID, bezoeker, bioscoopvertoning, zaal, new Stoel(1,1,true));
+            Bestelling bestelling = new Bestelling(bezoeker, bioscoopvertoning, new Stoel(1,1,true));
 
             //Test prijs (orginele prijs + 4 euro vipstoel)
             Assert.AreEqual(16.50, bestelling.Price);

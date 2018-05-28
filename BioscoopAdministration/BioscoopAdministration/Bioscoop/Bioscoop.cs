@@ -7,7 +7,7 @@ using BioscoopAdministration.Producten;
 
 namespace BioscoopAdministration
 {
-    class Bioscoop
+    public class Bioscoop
     {
         private List<Persoon> Personen;
         private List<Film> Films;
@@ -64,9 +64,9 @@ namespace BioscoopAdministration
             Films.Add(film);
         }
 
-        public void VerwijderFilm()
+        public void VerwijderFilm(Film film)
         {
-
+            Films.Remove(film);
         }
 
         public void BouwZaal(Zaal zaal)
@@ -74,19 +74,19 @@ namespace BioscoopAdministration
             Zalen.Add(zaal);
         }
 
-        public void VernietigZaal()
+        public void VernietigZaal(Zaal zaal)
         {
-
+            Zalen.Remove(zaal);
         }
 
-        public void VoegVertoningToe()
+        public void VoegVertoningToe(Bioscoopvertoning bioscoopvertoning)
         {
-
+            Vertoningen.Add(bioscoopvertoning);
         }
 
-        public void VerwijderVertoning()
+        public void VerwijderVertoning(Bioscoopvertoning bioscoopvertoning)
         {
-
+            Vertoningen.Remove(bioscoopvertoning);
         }
 
         public void VoegDigitaleKopieToe(DigitaleKopie digitaleKopie)
@@ -94,9 +94,9 @@ namespace BioscoopAdministration
             DigitaleKopieen.Add(digitaleKopie);
         }
 
-        public void VerwijderDigitaleKopie()
+        public void VerwijderDigitaleKopie(DigitaleKopie digitaleKopie)
         {
-
+            DigitaleKopieen.Remove(digitaleKopie);
         }
         /// <summary>
         /// Voegt een persoon toe aan de lijst

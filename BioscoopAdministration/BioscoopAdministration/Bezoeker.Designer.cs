@@ -39,11 +39,11 @@
             this.txtWoonplaats = new System.Windows.Forms.TextBox();
             this.btnBestel = new System.Windows.Forms.Button();
             this.gbPersoonlijk = new System.Windows.Forms.GroupBox();
+            this.lblBedrag = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.geboortedatumDTP = new System.Windows.Forms.DateTimePicker();
             this.label5 = new System.Windows.Forms.Label();
             this.lblStoelen = new System.Windows.Forms.ListBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.lblBedrag = new System.Windows.Forms.Label();
             this.gbPersoonlijk.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,12 +129,13 @@
             this.btnBestel.TabIndex = 1;
             this.btnBestel.Text = "Bestel bioscoopvertoning";
             this.btnBestel.UseVisualStyleBackColor = true;
+            this.btnBestel.Click += new System.EventHandler(this.btnBestel_Click);
             // 
             // gbPersoonlijk
             // 
             this.gbPersoonlijk.Controls.Add(this.lblBedrag);
             this.gbPersoonlijk.Controls.Add(this.label6);
-            this.gbPersoonlijk.Controls.Add(this.dateTimePicker1);
+            this.gbPersoonlijk.Controls.Add(this.geboortedatumDTP);
             this.gbPersoonlijk.Controls.Add(this.btnBestel);
             this.gbPersoonlijk.Controls.Add(this.txtWoonplaats);
             this.gbPersoonlijk.Controls.Add(this.txtAdres);
@@ -149,6 +150,30 @@
             this.gbPersoonlijk.TabIndex = 2;
             this.gbPersoonlijk.TabStop = false;
             this.gbPersoonlijk.Text = "Persoonlijke gegevens:";
+            // 
+            // lblBedrag
+            // 
+            this.lblBedrag.AutoSize = true;
+            this.lblBedrag.Location = new System.Drawing.Point(91, 158);
+            this.lblBedrag.Name = "lblBedrag";
+            this.lblBedrag.Size = new System.Drawing.Size(0, 13);
+            this.lblBedrag.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(9, 158);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(44, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Bedrag:";
+            // 
+            // geboortedatumDTP
+            // 
+            this.geboortedatumDTP.Location = new System.Drawing.Point(9, 122);
+            this.geboortedatumDTP.Name = "geboortedatumDTP";
+            this.geboortedatumDTP.Size = new System.Drawing.Size(200, 20);
+            this.geboortedatumDTP.TabIndex = 12;
             // 
             // label5
             // 
@@ -166,30 +191,6 @@
             this.lblStoelen.Name = "lblStoelen";
             this.lblStoelen.Size = new System.Drawing.Size(120, 225);
             this.lblStoelen.TabIndex = 13;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(9, 122);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 12;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 158);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(44, 13);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Bedrag:";
-            // 
-            // lblBedrag
-            // 
-            this.lblBedrag.AutoSize = true;
-            this.lblBedrag.Location = new System.Drawing.Point(91, 158);
-            this.lblBedrag.Name = "lblBedrag";
-            this.lblBedrag.Size = new System.Drawing.Size(0, 13);
-            this.lblBedrag.TabIndex = 14;
             // 
             // formBezoeker
             // 
@@ -225,7 +226,7 @@
         private System.Windows.Forms.GroupBox gbPersoonlijk;
         private System.Windows.Forms.Label lblBedrag;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker geboortedatumDTP;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ListBox lblStoelen;
     }
