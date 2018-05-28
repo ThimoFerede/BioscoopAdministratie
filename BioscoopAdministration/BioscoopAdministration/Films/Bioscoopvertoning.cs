@@ -14,6 +14,7 @@ namespace BioscoopAdministration
         public Filmkwaliteit Film_kwaliteit { get; private set; }
         public Zaal BioscoopZaal { get; private set; }
         public List<Bestelling> Bestellingen { get; private set; }
+        public double Prijs { get; private set; }
 
         public Bioscoopvertoning(
             string titel, 
@@ -24,7 +25,8 @@ namespace BioscoopAdministration
             List<Genre> lijstGenres, 
             DateTime begintijd, 
             Filmkwaliteit filmkwaliteit, 
-            Zaal zaal) 
+            Zaal zaal,
+            double prijs) 
             
             : base(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres)
         {
@@ -32,6 +34,7 @@ namespace BioscoopAdministration
             BioscoopZaal = zaal;
             Film_kwaliteit = filmkwaliteit;
             Bestellingen = new List<Bestelling>();
+            Prijs = prijs;
         }
 
         public Bioscoopvertoning(

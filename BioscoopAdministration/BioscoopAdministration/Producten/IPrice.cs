@@ -8,6 +8,6 @@ namespace BioscoopAdministration.Producten
 {
     interface IPrice
     {
-        int Price { get; }
+        double Price { get; }
     }
 }

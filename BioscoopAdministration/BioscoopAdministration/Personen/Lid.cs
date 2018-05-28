@@ -25,13 +25,15 @@ namespace BioscoopAdministration
         {
             Gebruikersnaam = gebruikersnaam;
             Wachtwoord = wachtwoord;
+            Bestellingen = new List<Bestelling>();
+            Uitleningen = new List<Uitlening>();
         }
         /// <summary>
         /// Controleer of het meegegeven wachtwoord overeenkomt met wachtwoord field
         /// </summary>
         /// <param name="wachtwoord"></param>
         /// <returns></returns>
-        bool WachtwoordCorrect(string wachtwoord)
+        public bool WachtwoordCorrect(string wachtwoord)
         {
             if (wachtwoord == Wachtwoord) return true;
             return false;
@@ -41,7 +43,7 @@ namespace BioscoopAdministration
         /// De bestelling mag niet null zijn
         /// </summary>
         /// <param name="bestelling"></param>
-        void VoegBestellingToe(Bestelling bestelling)
+        public void VoegBestellingToe(Bestelling bestelling)
         {
             if (bestelling == null) throw new ArgumentNullException("bestelling", "bestelling mag niet null zijn");
             Bestellingen.Add(bestelling);
@@ -54,7 +56,7 @@ namespace BioscoopAdministration
         /// <returns>
         /// Wel of niet verwijderd
         /// </returns>
-        bool AnnuleerBestelling(Bestelling bestelling)
+        public bool AnnuleerBestelling(Bestelling bestelling)
         {
             if (bestelling == null) throw new ArgumentNullException("bestelling", "bestelling mag niet null zijn");
             return Bestellingen.Remove(bestelling);
@@ -64,7 +66,7 @@ namespace BioscoopAdministration
         /// De uitlening mag niet null zijn
         /// </summary>
         /// <param name="uitlening"></param>
-        void VoegUitleningToe(Uitlening uitlening)
+        public void VoegUitleningToe(Uitlening uitlening)
         {
             if (uitlening == null) throw new ArgumentNullException("uitlening", "uitlening mag niet null zijn");
             Uitleningen.Add(uitlening);
