@@ -33,7 +33,6 @@ namespace BioscoopAdministration
         public DigitaleKopie(
             Film film, 
             int toegangscode)
-
             : base(film.Titel, film.Jaar, film.Speelduur, film.Taal, film.Leeftijdscategorie, film.Genres)
         {
             Toegangscode = toegangscode;

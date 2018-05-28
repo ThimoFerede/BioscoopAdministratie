@@ -25,7 +25,7 @@ namespace BioscoopAdministration_tests
             Bioscoopvertoning.Filmkwaliteit filmkwaliteit = Bioscoopvertoning.Filmkwaliteit._Imax_3D;
             Zaal zaal = new Zaal(1, Bioscoopvertoning.Filmkwaliteit._Imax_3D, 20, 30, 2, 20);
 
-            Bioscoopvertoning b = new Bioscoopvertoning(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres, begintijd, filmkwaliteit, zaal);
+            Bioscoopvertoning b = new Bioscoopvertoning(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres, begintijd, filmkwaliteit, zaal, 12);
 
             Assert.AreEqual(titel, b.Titel);
             Assert.AreEqual(jaar, b.Jaar);
@@ -55,10 +55,9 @@ namespace BioscoopAdministration_tests
             Bioscoopvertoning.Filmkwaliteit filmkwaliteit = Bioscoopvertoning.Filmkwaliteit._Imax_3D;
             Zaal zaal = new Zaal(1, Bioscoopvertoning.Filmkwaliteit._Imax_3D, 20, 30, 2, 20);
 
-            Bioscoopvertoning b = new Bioscoopvertoning(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres, begintijd, filmkwaliteit, zaal);
+            Bioscoopvertoning b = new Bioscoopvertoning(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres, begintijd, filmkwaliteit, zaal, 12);
             Bezoeker bz = new Bezoeker("Joost", "Boomlaan 36", "Verweg", DateTime.Now);
-            Bestelling bes = new Bestelling(12, bz);
-            b.VoegBestellingToe(bes);
+            Bestelling bes = new Bestelling(12, bz, b, zaal, zaal.Stoelen[0]);
 
             Assert.AreEqual(1, b.Bestellingen.Count);
         }
@@ -80,7 +79,7 @@ namespace BioscoopAdministration_tests
             Bioscoopvertoning.Filmkwaliteit filmkwaliteit = Bioscoopvertoning.Filmkwaliteit._Imax_3D;
             Zaal zaal = new Zaal(1, Bioscoopvertoning.Filmkwaliteit._Imax_3D, 20, 30, 2, 20);
 
-            Bioscoopvertoning b = new Bioscoopvertoning(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres, begintijd, filmkwaliteit, zaal);
+            Bioscoopvertoning b = new Bioscoopvertoning(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres, begintijd, filmkwaliteit, zaal, 12);
             Bestelling bes = null;
             b.VoegBestellingToe(bes);
         }
@@ -102,7 +101,7 @@ namespace BioscoopAdministration_tests
             Zaal zaal = new Zaal(1, Bioscoopvertoning.Filmkwaliteit._Imax_3D, 20, 30, 2, 20);
 
             string bString = "Avengers: Infinity war - 2018 - 149 minuten - Engels - 12 - " + lijstGenres.ToString() + " - " + begintijd.ToString() + " - " + begintijd.AddMinutes(speelduur).ToString() + " - _Imax_3D - " + zaal;
-            Bioscoopvertoning b = new Bioscoopvertoning(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres, begintijd, filmkwaliteit, zaal);
+            Bioscoopvertoning b = new Bioscoopvertoning(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres, begintijd, filmkwaliteit, zaal, 12);
 
             Assert.AreEqual(bString, b.ToString());
 
