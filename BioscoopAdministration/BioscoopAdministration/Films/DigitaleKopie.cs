@@ -51,7 +51,7 @@ namespace BioscoopAdministration
 
         public override string ToString()
         {
-            return Titel + " - " + Jaar + " - " + Speelduur + " - " + Taal + " - " + Leeftijdscategorie + " - " + Genres.ToString() + " - " + Toegangscode;
+            return Titel + " - " + Jaar + " - " + Speelduur + " minuten - " + Taal + " - " + Leeftijdscategorie + " - " + Genres.ToString() + " - " + Toegangscode;
         }
     }
 }

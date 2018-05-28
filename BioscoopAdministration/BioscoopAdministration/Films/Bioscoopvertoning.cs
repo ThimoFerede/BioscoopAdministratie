@@ -65,7 +65,7 @@ namespace BioscoopAdministration
 
         public override string ToString()
         {
-            return Titel + " - " + Jaar + " - " + Speelduur + " - " + Taal + " - " + Leeftijdscategorie + " - " + Genres.ToString() + " - " + Begintijd + " - " + Eindtijd + " - " + Film_kwaliteit.ToString() + " - " + BioscoopZaal;
+            return Titel + " - " + Jaar + " - " + Speelduur + " minuten - " + Taal + " - " + Leeftijdscategorie + " - " + Genres.ToString() + " - " + Begintijd + " - " + Eindtijd + " - " + Film_kwaliteit.ToString() + " - " + BioscoopZaal;
         }
 
         public enum Filmkwaliteit

@@ -49,12 +49,36 @@
     <Compile Include="Films\Bioscoopvertoning.cs" />
     <Compile Include="Films\DigitaleKopie.cs" />
     <Compile Include="Films\Film.cs" />
+    <Compile Include="Leden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Leden.Designer.cs">
+      <DependentUpon>Leden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bezoeker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bezoeker.Designer.cs">
+      <DependentUpon>Bezoeker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistreerLid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistreerLid.Designer.cs">
+      <DependentUpon>RegistreerLid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medewerker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medewerker.Designer.cs">
+      <DependentUpon>Medewerker.cs</DependentUpon>
+    </Compile>
     <Compile Include="Personen\Bezoeker.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+      <DependentUpon>LogIn.cs</DependentUpon>
     </Compile>
     <Compile Include="Personen\Lid.cs" />
     <Compile Include="Personen\Medewerker.cs" />
@@ -66,6 +90,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Bioscoop\Stoel.cs" />
     <Compile Include="Bioscoop\Zaal.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Leden.resx">
+      <DependentUpon>Leden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bezoeker.resx">
+      <DependentUpon>Bezoeker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistreerLid.resx">
+      <DependentUpon>RegistreerLid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medewerker.resx">
+      <DependentUpon>Medewerker.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
