@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rbLid = new System.Windows.Forms.RadioButton();
-            this.rbMedewerker = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtGebruiker = new System.Windows.Forms.TextBox();
@@ -38,30 +36,10 @@
             this.gbLogIn = new System.Windows.Forms.GroupBox();
             this.btnRegistreer = new System.Windows.Forms.Button();
             this.btnBestelB = new System.Windows.Forms.Button();
+            this.rbMedewerker = new System.Windows.Forms.RadioButton();
+            this.rbLid = new System.Windows.Forms.RadioButton();
             this.gbLogIn.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // rbLid
-            // 
-            this.rbLid.AutoSize = true;
-            this.rbLid.Location = new System.Drawing.Point(6, 29);
-            this.rbLid.Name = "rbLid";
-            this.rbLid.Size = new System.Drawing.Size(92, 17);
-            this.rbLid.TabIndex = 0;
-            this.rbLid.TabStop = true;
-            this.rbLid.Text = "Ik ben een lid.";
-            this.rbLid.UseVisualStyleBackColor = true;
-            // 
-            // rbMedewerker
-            // 
-            this.rbMedewerker.AutoSize = true;
-            this.rbMedewerker.Location = new System.Drawing.Point(202, 29);
-            this.rbMedewerker.Name = "rbMedewerker";
-            this.rbMedewerker.Size = new System.Drawing.Size(140, 17);
-            this.rbMedewerker.TabIndex = 1;
-            this.rbMedewerker.TabStop = true;
-            this.rbMedewerker.Text = "Ik ben een medewerker.";
-            this.rbMedewerker.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -103,6 +81,7 @@
             this.btnLogIn.TabIndex = 6;
             this.btnLogIn.Text = "Log in";
             this.btnLogIn.UseVisualStyleBackColor = true;
+            this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
             // gbLogIn
             // 
@@ -138,6 +117,28 @@
             this.btnBestelB.Text = "Bestel bioscoopbestelling als bezoeker";
             this.btnBestelB.UseVisualStyleBackColor = true;
             // 
+            // rbMedewerker
+            // 
+            this.rbMedewerker.AutoSize = true;
+            this.rbMedewerker.Location = new System.Drawing.Point(202, 29);
+            this.rbMedewerker.Name = "rbMedewerker";
+            this.rbMedewerker.Size = new System.Drawing.Size(140, 17);
+            this.rbMedewerker.TabIndex = 1;
+            this.rbMedewerker.TabStop = true;
+            this.rbMedewerker.Text = "Ik ben een medewerker.";
+            this.rbMedewerker.UseVisualStyleBackColor = true;
+            // 
+            // rbLid
+            // 
+            this.rbLid.AutoSize = true;
+            this.rbLid.Location = new System.Drawing.Point(6, 29);
+            this.rbLid.Name = "rbLid";
+            this.rbLid.Size = new System.Drawing.Size(92, 17);
+            this.rbLid.TabIndex = 0;
+            this.rbLid.TabStop = true;
+            this.rbLid.Text = "Ik ben een lid.";
+            this.rbLid.UseVisualStyleBackColor = true;
+            // 
             // formLogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,9 +156,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.RadioButton rbLid;
-        private System.Windows.Forms.RadioButton rbMedewerker;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtGebruiker;
@@ -166,6 +164,8 @@
         private System.Windows.Forms.GroupBox gbLogIn;
         private System.Windows.Forms.Button btnRegistreer;
         private System.Windows.Forms.Button btnBestelB;
+        private System.Windows.Forms.RadioButton rbLid;
+        private System.Windows.Forms.RadioButton rbMedewerker;
     }
 }
 

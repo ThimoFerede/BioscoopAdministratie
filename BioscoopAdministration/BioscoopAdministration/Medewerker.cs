@@ -12,7 +12,7 @@ namespace BioscoopAdministration
 {
     public partial class formMedewerker : Form
     {
-        public formMedewerker()
+        public formMedewerker(Medewerker m)
         {
             InitializeComponent();
         }
@@ -28,6 +28,11 @@ namespace BioscoopAdministration
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnVoegFilmToe_Click(object sender, EventArgs e)
         {
 
         }

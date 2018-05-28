@@ -29,7 +29,7 @@ namespace BioscoopAdministration
         /// </summary>
         /// <param name="wachtwoord"></param>
         /// <returns></returns>
-        bool WachtwoordCorrect(string wachtwoord)
+        public bool WachtwoordCorrect(string wachtwoord)
         {
             if (wachtwoord == Wachtwoord) return true;
             return false;

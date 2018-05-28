@@ -29,14 +29,11 @@
         private void InitializeComponent()
         {
             this.gbPersoonlijk = new System.Windows.Forms.GroupBox();
-            this.btnWijzig = new System.Windows.Forms.Button();
             this.lblGeboortedatum = new System.Windows.Forms.Label();
-            this.txtWachtwoord = new System.Windows.Forms.TextBox();
             this.txtGebruikersnaam = new System.Windows.Forms.TextBox();
             this.txtWoonplaats = new System.Windows.Forms.TextBox();
             this.txtAdres = new System.Windows.Forms.TextBox();
             this.txtNaam = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,25 +43,21 @@
             this.btnLeenuit = new System.Windows.Forms.Button();
             this.btnBestelBV = new System.Windows.Forms.Button();
             this.lbGeschiedenis = new System.Windows.Forms.ListBox();
+            this.lbStoel = new System.Windows.Forms.ListBox();
+            this.lbFilms = new System.Windows.Forms.ListBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.gbBetaal = new System.Windows.Forms.GroupBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.lblBedrag = new System.Windows.Forms.Label();
-            this.btnBetaal = new System.Windows.Forms.Button();
             this.gbPersoonlijk.SuspendLayout();
-            this.gbBetaal.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbPersoonlijk
             // 
-            this.gbPersoonlijk.Controls.Add(this.btnWijzig);
             this.gbPersoonlijk.Controls.Add(this.lblGeboortedatum);
-            this.gbPersoonlijk.Controls.Add(this.txtWachtwoord);
             this.gbPersoonlijk.Controls.Add(this.txtGebruikersnaam);
             this.gbPersoonlijk.Controls.Add(this.txtWoonplaats);
             this.gbPersoonlijk.Controls.Add(this.txtAdres);
             this.gbPersoonlijk.Controls.Add(this.txtNaam);
-            this.gbPersoonlijk.Controls.Add(this.label6);
             this.gbPersoonlijk.Controls.Add(this.label5);
             this.gbPersoonlijk.Controls.Add(this.label4);
             this.gbPersoonlijk.Controls.Add(this.label3);
@@ -72,19 +65,10 @@
             this.gbPersoonlijk.Controls.Add(this.label1);
             this.gbPersoonlijk.Location = new System.Drawing.Point(12, 12);
             this.gbPersoonlijk.Name = "gbPersoonlijk";
-            this.gbPersoonlijk.Size = new System.Drawing.Size(200, 259);
+            this.gbPersoonlijk.Size = new System.Drawing.Size(200, 166);
             this.gbPersoonlijk.TabIndex = 0;
             this.gbPersoonlijk.TabStop = false;
             this.gbPersoonlijk.Text = "Persoonlijke gegevens:";
-            // 
-            // btnWijzig
-            // 
-            this.btnWijzig.Location = new System.Drawing.Point(9, 211);
-            this.btnWijzig.Name = "btnWijzig";
-            this.btnWijzig.Size = new System.Drawing.Size(185, 23);
-            this.btnWijzig.TabIndex = 1;
-            this.btnWijzig.Text = "Sla wijzigingen op.";
-            this.btnWijzig.UseVisualStyleBackColor = true;
             // 
             // lblGeboortedatum
             // 
@@ -93,14 +77,6 @@
             this.lblGeboortedatum.Name = "lblGeboortedatum";
             this.lblGeboortedatum.Size = new System.Drawing.Size(0, 13);
             this.lblGeboortedatum.TabIndex = 11;
-            // 
-            // txtWachtwoord
-            // 
-            this.txtWachtwoord.Location = new System.Drawing.Point(94, 164);
-            this.txtWachtwoord.Name = "txtWachtwoord";
-            this.txtWachtwoord.Size = new System.Drawing.Size(100, 20);
-            this.txtWachtwoord.TabIndex = 10;
-            this.txtWachtwoord.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // txtGebruikersnaam
             // 
@@ -129,15 +105,6 @@
             this.txtNaam.Name = "txtNaam";
             this.txtNaam.Size = new System.Drawing.Size(100, 20);
             this.txtNaam.TabIndex = 6;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 167);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Wachtwoord:";
             // 
             // label5
             // 
@@ -186,7 +153,7 @@
             // 
             // btnLogUit
             // 
-            this.btnLogUit.Location = new System.Drawing.Point(578, 12);
+            this.btnLogUit.Location = new System.Drawing.Point(554, 3);
             this.btnLogUit.Name = "btnLogUit";
             this.btnLogUit.Size = new System.Drawing.Size(75, 23);
             this.btnLogUit.TabIndex = 1;
@@ -195,84 +162,86 @@
             // 
             // btnLeenuit
             // 
-            this.btnLeenuit.Location = new System.Drawing.Point(218, 61);
+            this.btnLeenuit.Location = new System.Drawing.Point(12, 248);
             this.btnLeenuit.Name = "btnLeenuit";
-            this.btnLeenuit.Size = new System.Drawing.Size(182, 23);
+            this.btnLeenuit.Size = new System.Drawing.Size(191, 23);
             this.btnLeenuit.TabIndex = 3;
             this.btnLeenuit.Text = "Leen digitale kopie";
             this.btnLeenuit.UseVisualStyleBackColor = true;
+            this.btnLeenuit.Click += new System.EventHandler(this.btnLeenuit_Click);
             // 
             // btnBestelBV
             // 
-            this.btnBestelBV.Location = new System.Drawing.Point(218, 28);
+            this.btnBestelBV.Location = new System.Drawing.Point(12, 219);
             this.btnBestelBV.Name = "btnBestelBV";
-            this.btnBestelBV.Size = new System.Drawing.Size(182, 23);
+            this.btnBestelBV.Size = new System.Drawing.Size(191, 23);
             this.btnBestelBV.TabIndex = 4;
             this.btnBestelBV.Text = "Bestel bioscoopvertoning";
             this.btnBestelBV.UseVisualStyleBackColor = true;
+            this.btnBestelBV.Click += new System.EventHandler(this.btnBestelBV_Click);
             // 
             // lbGeschiedenis
             // 
             this.lbGeschiedenis.FormattingEnabled = true;
-            this.lbGeschiedenis.Location = new System.Drawing.Point(420, 46);
+            this.lbGeschiedenis.Location = new System.Drawing.Point(218, 46);
             this.lbGeschiedenis.Name = "lbGeschiedenis";
-            this.lbGeschiedenis.Size = new System.Drawing.Size(233, 225);
+            this.lbGeschiedenis.Size = new System.Drawing.Size(148, 225);
             this.lbGeschiedenis.TabIndex = 5;
+            // 
+            // lbStoel
+            // 
+            this.lbStoel.FormattingEnabled = true;
+            this.lbStoel.Location = new System.Drawing.Point(513, 46);
+            this.lbStoel.Name = "lbStoel";
+            this.lbStoel.Size = new System.Drawing.Size(105, 225);
+            this.lbStoel.TabIndex = 8;
+            // 
+            // lbFilms
+            // 
+            this.lbFilms.FormattingEnabled = true;
+            this.lbFilms.Location = new System.Drawing.Point(372, 46);
+            this.lbFilms.Name = "lbFilms";
+            this.lbFilms.Size = new System.Drawing.Size(135, 225);
+            this.lbFilms.TabIndex = 9;
+            this.lbFilms.SelectedIndexChanged += new System.EventHandler(this.lbFilms_SelectedIndexChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(510, 30);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(34, 13);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Stoel:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(420, 28);
+            this.label7.Location = new System.Drawing.Point(369, 30);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Geschiedenis:";
-            // 
-            // gbBetaal
-            // 
-            this.gbBetaal.Controls.Add(this.btnBetaal);
-            this.gbBetaal.Controls.Add(this.lblBedrag);
-            this.gbBetaal.Controls.Add(this.label8);
-            this.gbBetaal.Location = new System.Drawing.Point(218, 146);
-            this.gbBetaal.Name = "gbBetaal";
-            this.gbBetaal.Size = new System.Drawing.Size(196, 125);
-            this.gbBetaal.TabIndex = 7;
-            this.gbBetaal.TabStop = false;
-            this.gbBetaal.Text = "Betaling";
+            this.label7.Size = new System.Drawing.Size(33, 13);
+            this.label7.TabIndex = 11;
+            this.label7.Text = "Films:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 30);
+            this.label8.Location = new System.Drawing.Point(218, 30);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(116, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Nog te betalen bedrag:";
-            // 
-            // lblBedrag
-            // 
-            this.lblBedrag.AutoSize = true;
-            this.lblBedrag.Location = new System.Drawing.Point(147, 30);
-            this.lblBedrag.Name = "lblBedrag";
-            this.lblBedrag.Size = new System.Drawing.Size(0, 13);
-            this.lblBedrag.TabIndex = 1;
-            // 
-            // btnBetaal
-            // 
-            this.btnBetaal.Location = new System.Drawing.Point(9, 77);
-            this.btnBetaal.Name = "btnBetaal";
-            this.btnBetaal.Size = new System.Drawing.Size(173, 23);
-            this.btnBetaal.TabIndex = 2;
-            this.btnBetaal.Text = "Betaal bedrag";
-            this.btnBetaal.UseVisualStyleBackColor = true;
+            this.label8.Size = new System.Drawing.Size(74, 13);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Geschiedenis:";
             // 
             // formLeden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(665, 283);
-            this.Controls.Add(this.gbBetaal);
+            this.ClientSize = new System.Drawing.Size(630, 283);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lbFilms);
+            this.Controls.Add(this.lbStoel);
             this.Controls.Add(this.lbGeschiedenis);
             this.Controls.Add(this.btnBestelBV);
             this.Controls.Add(this.btnLeenuit);
@@ -283,8 +252,6 @@
             this.Load += new System.EventHandler(this.formLeden_Load);
             this.gbPersoonlijk.ResumeLayout(false);
             this.gbPersoonlijk.PerformLayout();
-            this.gbBetaal.ResumeLayout(false);
-            this.gbBetaal.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,24 +263,21 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnWijzig;
         private System.Windows.Forms.Label lblGeboortedatum;
-        private System.Windows.Forms.TextBox txtWachtwoord;
         private System.Windows.Forms.TextBox txtGebruikersnaam;
         private System.Windows.Forms.TextBox txtWoonplaats;
         private System.Windows.Forms.TextBox txtAdres;
         private System.Windows.Forms.TextBox txtNaam;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnLogUit;
         private System.Windows.Forms.Button btnLeenuit;
         private System.Windows.Forms.Button btnBestelBV;
         private System.Windows.Forms.ListBox lbGeschiedenis;
+        private System.Windows.Forms.ListBox lbStoel;
+        private System.Windows.Forms.ListBox lbFilms;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.GroupBox gbBetaal;
-        private System.Windows.Forms.Button btnBetaal;
-        private System.Windows.Forms.Label lblBedrag;
         private System.Windows.Forms.Label label8;
     }
 }

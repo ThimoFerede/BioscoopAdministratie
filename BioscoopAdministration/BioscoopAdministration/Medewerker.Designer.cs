@@ -148,6 +148,7 @@
             this.btnVoegFilmToe.TabIndex = 9;
             this.btnVoegFilmToe.Text = "Voeg film toe";
             this.btnVoegFilmToe.UseVisualStyleBackColor = true;
+            this.btnVoegFilmToe.Click += new System.EventHandler(this.btnVoegFilmToe_Click);
             // 
             // btnVernietigZaal
             // 

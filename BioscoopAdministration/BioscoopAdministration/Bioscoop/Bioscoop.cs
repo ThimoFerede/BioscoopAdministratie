@@ -7,13 +7,13 @@ using BioscoopAdministration.Producten;
 
 namespace BioscoopAdministration
 {
-    class Bioscoop
+    public class Bioscoop
     {
-        private List<Persoon> Personen;
-        private List<Film> Films;
-        private List<Bioscoopvertoning> Vertoningen;
-        private List<DigitaleKopie> DigitaleKopieen;
-        private List<Zaal> Zalen;
+        public List<Persoon> Personen { get; private set; }
+        public List<Film> Films { get; private set; }
+        public List<Bioscoopvertoning> Vertoningen { get; private set; }
+        public List<DigitaleKopie> DigitaleKopieen { get; private set; }
+        public List<Zaal> Zalen { get; private set; }
 
         private string Naam;
         private string Locatie;
@@ -119,6 +119,44 @@ namespace BioscoopAdministration
         {
             if (persoon == null) throw new ArgumentNullException("persoon", "persoon mag niet null zijn");
             return Personen.Remove(persoon);
+        }
+
+        public Lid LogInLid(string gebruikersnaam, string wachtwoord)
+        {
+            foreach (Persoon p in Personen)
+            {
+                if(p is Lid)
+                {
+                    Lid l = p as Lid;
+                    if(l.Gebruikersnaam == gebruikersnaam)
+                    {
+                        if (l.WachtwoordCorrect(wachtwoord))
+                        {
+                            return l;
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        public Medewerker LogInMedewerker(int gebruikersnaam, string wachtwoord)
+        {
+            foreach (Persoon p in Personen)
+            {
+                if (p is Medewerker)
+                {
+                    Medewerker m = p as Medewerker;
+                    if (m.MedewerkerID == gebruikersnaam)
+                    {
+                        if (m.WachtwoordCorrect(wachtwoord))
+                        {
+                            return m;
+                        }
+                    }
+                }
+            }
+            return null;
         }
     }
 }

@@ -99,6 +99,9 @@
     <EmbeddedResource Include="Bezoeker.resx">
       <DependentUpon>Bezoeker.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RegistreerLid.resx">
       <DependentUpon>RegistreerLid.cs</DependentUpon>
     </EmbeddedResource>
