@@ -55,9 +55,9 @@
             this.btnLogUit = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.InfoLBL = new System.Windows.Forms.Label();
-            this.InfoLB = new System.Windows.Forms.ListBox();
             this.VorigeBTTN = new System.Windows.Forms.Button();
+            this.InfoLB = new System.Windows.Forms.ListBox();
+            this.InfoLBL = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,6 +109,7 @@
             this.btnVoegKopieToe.TabIndex = 5;
             this.btnVoegKopieToe.Text = "Voeg digitale kopie toe";
             this.btnVoegKopieToe.UseVisualStyleBackColor = true;
+            this.btnVoegKopieToe.Click += new System.EventHandler(this.btnVoegKopieToe_Click);
             // 
             // btnVoegVertoningtoe
             // 
@@ -320,14 +321,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Info";
             // 
-            // InfoLBL
+            // VorigeBTTN
             // 
-            this.InfoLBL.AutoSize = true;
-            this.InfoLBL.Location = new System.Drawing.Point(6, 37);
-            this.InfoLBL.Name = "InfoLBL";
-            this.InfoLBL.Size = new System.Drawing.Size(35, 13);
-            this.InfoLBL.TabIndex = 0;
-            this.InfoLBL.Text = "label7";
+            this.VorigeBTTN.Location = new System.Drawing.Point(124, 15);
+            this.VorigeBTTN.Name = "VorigeBTTN";
+            this.VorigeBTTN.Size = new System.Drawing.Size(75, 23);
+            this.VorigeBTTN.TabIndex = 32;
+            this.VorigeBTTN.Text = "vorige";
+            this.VorigeBTTN.UseVisualStyleBackColor = true;
+            this.VorigeBTTN.Click += new System.EventHandler(this.VorigeBTTN_Click);
             // 
             // InfoLB
             // 
@@ -338,15 +340,14 @@
             this.InfoLB.TabIndex = 31;
             this.InfoLB.DoubleClick += new System.EventHandler(this.InfoLB_DoubleClick);
             // 
-            // VorigeBTTN
+            // InfoLBL
             // 
-            this.VorigeBTTN.Location = new System.Drawing.Point(124, 15);
-            this.VorigeBTTN.Name = "VorigeBTTN";
-            this.VorigeBTTN.Size = new System.Drawing.Size(75, 23);
-            this.VorigeBTTN.TabIndex = 32;
-            this.VorigeBTTN.Text = "vorige";
-            this.VorigeBTTN.UseVisualStyleBackColor = true;
-            this.VorigeBTTN.Click += new System.EventHandler(this.VorigeBTTN_Click);
+            this.InfoLBL.AutoSize = true;
+            this.InfoLBL.Location = new System.Drawing.Point(6, 37);
+            this.InfoLBL.Name = "InfoLBL";
+            this.InfoLBL.Size = new System.Drawing.Size(35, 13);
+            this.InfoLBL.TabIndex = 0;
+            this.InfoLBL.Text = "label7";
             // 
             // formMedewerker
             // 

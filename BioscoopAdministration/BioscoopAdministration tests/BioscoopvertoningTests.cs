@@ -57,7 +57,7 @@ namespace BioscoopAdministration_tests
 
             Bioscoopvertoning b = new Bioscoopvertoning(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres, begintijd, filmkwaliteit, zaal, 12);
             Bezoeker bz = new Bezoeker("Joost", "Boomlaan 36", "Verweg", DateTime.Now);
-            Bestelling bes = new Bestelling(12, bz, b, zaal, zaal.Stoelen[0]);
+            Bestelling bes = new Bestelling(bz, b, zaal.Stoelen[0]);
 
             Assert.AreEqual(1, b.Bestellingen.Count);
         }

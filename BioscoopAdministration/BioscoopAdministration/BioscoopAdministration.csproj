@@ -31,6 +31,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -51,6 +55,12 @@
     </Compile>
     <Compile Include="DialogForms\BouwZaalDialog.Designer.cs">
       <DependentUpon>BouwZaalDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForms\MaakDigitaleKopieDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForms\MaakDigitaleKopieDialog.Designer.cs">
+      <DependentUpon>MaakDigitaleKopieDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="DialogForms\MaakVertoningDialog.cs">
       <SubType>Form</SubType>
@@ -115,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DialogForms\BouwZaalDialog.resx">
       <DependentUpon>BouwZaalDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForms\MaakDigitaleKopieDialog.resx">
+      <DependentUpon>MaakDigitaleKopieDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DialogForms\MaakVertoningDialog.resx">
       <DependentUpon>MaakVertoningDialog.cs</DependentUpon>
