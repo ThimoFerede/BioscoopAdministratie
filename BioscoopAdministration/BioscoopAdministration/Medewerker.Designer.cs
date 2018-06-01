@@ -139,6 +139,7 @@
             this.btnBouwZaal.TabIndex = 8;
             this.btnBouwZaal.Text = "Bouw zaal";
             this.btnBouwZaal.UseVisualStyleBackColor = true;
+            this.btnBouwZaal.Click += new System.EventHandler(this.btnBouwZaal_Click);
             // 
             // btnVernietigZaal
             // 

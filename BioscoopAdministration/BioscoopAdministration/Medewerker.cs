@@ -289,5 +289,11 @@ namespace BioscoopAdministration
             MaakDigitaleKopieDialog digitaleKopieDialog = new MaakDigitaleKopieDialog(bioscoop);
             digitaleKopieDialog.Show();
         }
+
+        private void btnBouwZaal_Click(object sender, EventArgs e)
+        {
+            BouwZaalDialog zaalDialog = new BouwZaalDialog(bioscoop);
+            zaalDialog.Show();
+        }
     }
 }
