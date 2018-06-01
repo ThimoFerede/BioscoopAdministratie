@@ -109,6 +109,13 @@ namespace BioscoopAdministration
 
         public void BouwZaal(Zaal zaal)
         {
+            foreach(Zaal z in Zalen)
+            {
+                if(z.Zaalnummer == zaal.Zaalnummer)
+                {
+                    throw new NumberAlreadyTakenException("Er is al een zaal met dit nummer");
+                }
+            }
             Zalen.Add(zaal);
         }
 
@@ -124,6 +131,18 @@ namespace BioscoopAdministration
         public void VoegPersoonToe(Persoon persoon)
         {
             if (persoon == null) throw new ArgumentNullException("persoon", "persoon mag niet null zijn");
+            foreach(Persoon p in Personen)
+            {
+                if(p is Medewerker && persoon is Medewerker)
+                {
+                    Medewerker bestaandeMedewerker = p as Medewerker;
+                    Medewerker nieuweMedewerker = persoon as Medewerker;
+                    if(bestaandeMedewerker.MedewerkerID == nieuweMedewerker.MedewerkerID)
+                    {
+                        throw new NumberAlreadyTakenException("Andere medewerker heeft hetzelfde Id");
+                    }
+                }
+            }
             Personen.Add(persoon);
         }
         /// <summary>

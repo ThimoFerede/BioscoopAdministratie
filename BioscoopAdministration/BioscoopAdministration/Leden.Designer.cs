@@ -30,10 +30,6 @@
         {
             this.gbPersoonlijk = new System.Windows.Forms.GroupBox();
             this.lblGeboortedatum = new System.Windows.Forms.Label();
-            this.txtGebruikersnaam = new System.Windows.Forms.TextBox();
-            this.txtWoonplaats = new System.Windows.Forms.TextBox();
-            this.txtAdres = new System.Windows.Forms.TextBox();
-            this.txtNaam = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -48,6 +44,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.txtGebruikersnaam = new System.Windows.Forms.TextBox();
+            this.txtWoonplaats = new System.Windows.Forms.TextBox();
+            this.txtAdres = new System.Windows.Forms.TextBox();
+            this.txtNaam = new System.Windows.Forms.TextBox();
             this.gbPersoonlijk.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,34 +77,6 @@
             this.lblGeboortedatum.Name = "lblGeboortedatum";
             this.lblGeboortedatum.Size = new System.Drawing.Size(0, 13);
             this.lblGeboortedatum.TabIndex = 11;
-            // 
-            // txtGebruikersnaam
-            // 
-            this.txtGebruikersnaam.Location = new System.Drawing.Point(94, 134);
-            this.txtGebruikersnaam.Name = "txtGebruikersnaam";
-            this.txtGebruikersnaam.Size = new System.Drawing.Size(100, 20);
-            this.txtGebruikersnaam.TabIndex = 9;
-            // 
-            // txtWoonplaats
-            // 
-            this.txtWoonplaats.Location = new System.Drawing.Point(94, 74);
-            this.txtWoonplaats.Name = "txtWoonplaats";
-            this.txtWoonplaats.Size = new System.Drawing.Size(100, 20);
-            this.txtWoonplaats.TabIndex = 8;
-            // 
-            // txtAdres
-            // 
-            this.txtAdres.Location = new System.Drawing.Point(94, 49);
-            this.txtAdres.Name = "txtAdres";
-            this.txtAdres.Size = new System.Drawing.Size(100, 20);
-            this.txtAdres.TabIndex = 7;
-            // 
-            // txtNaam
-            // 
-            this.txtNaam.Location = new System.Drawing.Point(94, 23);
-            this.txtNaam.Name = "txtNaam";
-            this.txtNaam.Size = new System.Drawing.Size(100, 20);
-            this.txtNaam.TabIndex = 6;
             // 
             // label5
             // 
@@ -159,6 +131,7 @@
             this.btnLogUit.TabIndex = 1;
             this.btnLogUit.Text = "Log uit";
             this.btnLogUit.UseVisualStyleBackColor = true;
+            this.btnLogUit.Click += new System.EventHandler(this.btnLogUit_Click);
             // 
             // btnLeenuit
             // 
@@ -232,6 +205,34 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "Geschiedenis:";
             // 
+            // txtGebruikersnaam
+            // 
+            this.txtGebruikersnaam.Location = new System.Drawing.Point(94, 134);
+            this.txtGebruikersnaam.Name = "txtGebruikersnaam";
+            this.txtGebruikersnaam.Size = new System.Drawing.Size(100, 20);
+            this.txtGebruikersnaam.TabIndex = 9;
+            // 
+            // txtWoonplaats
+            // 
+            this.txtWoonplaats.Location = new System.Drawing.Point(94, 74);
+            this.txtWoonplaats.Name = "txtWoonplaats";
+            this.txtWoonplaats.Size = new System.Drawing.Size(100, 20);
+            this.txtWoonplaats.TabIndex = 8;
+            // 
+            // txtAdres
+            // 
+            this.txtAdres.Location = new System.Drawing.Point(94, 49);
+            this.txtAdres.Name = "txtAdres";
+            this.txtAdres.Size = new System.Drawing.Size(100, 20);
+            this.txtAdres.TabIndex = 7;
+            // 
+            // txtNaam
+            // 
+            this.txtNaam.Location = new System.Drawing.Point(94, 23);
+            this.txtNaam.Name = "txtNaam";
+            this.txtNaam.Size = new System.Drawing.Size(100, 20);
+            this.txtNaam.TabIndex = 6;
+            // 
             // formLeden
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,10 +265,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblGeboortedatum;
-        private System.Windows.Forms.TextBox txtGebruikersnaam;
-        private System.Windows.Forms.TextBox txtWoonplaats;
-        private System.Windows.Forms.TextBox txtAdres;
-        private System.Windows.Forms.TextBox txtNaam;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnLogUit;
@@ -279,5 +276,9 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtGebruikersnaam;
+        private System.Windows.Forms.TextBox txtWoonplaats;
+        private System.Windows.Forms.TextBox txtAdres;
+        private System.Windows.Forms.TextBox txtNaam;
     }
 }

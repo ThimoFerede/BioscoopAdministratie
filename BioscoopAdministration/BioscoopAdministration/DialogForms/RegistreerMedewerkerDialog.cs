@@ -54,9 +54,16 @@ namespace BioscoopAdministration.DialogForms
                 DateTime Geboortedatum = dtpGeboortedatum.Value;
                 int Id = (int)nudId.Value;
                 string Wachtwoord = txtWachtwoord.Text;
-                Medewerker NieuweMedewerker = new Medewerker(Naam, Adres, Woonplaats, Geboortedatum, Id, Wachtwoord);
-                bioscoop.VoegPersoonToe(NieuweMedewerker);
-                this.Close();
+                try
+                {
+                    Medewerker NieuweMedewerker = new Medewerker(Naam, Adres, Woonplaats, Geboortedatum, Id, Wachtwoord);
+                    bioscoop.VoegPersoonToe(NieuweMedewerker);
+                    this.Close();
+                }
+                catch (NumberAlreadyTakenException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 

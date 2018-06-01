@@ -46,6 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bioscoop\Bioscoop.cs" />
+    <Compile Include="DialogForms\BouwZaalDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForms\BouwZaalDialog.Designer.cs">
+      <DependentUpon>BouwZaalDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="DialogForms\MaakVertoningDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,7 @@
     <Compile Include="Medewerker.Designer.cs">
       <DependentUpon>Medewerker.cs</DependentUpon>
     </Compile>
+    <Compile Include="NumberAlreadyTakenException.cs" />
     <Compile Include="Personen\Bezoeker.cs" />
     <Compile Include="LogIn.cs">
       <SubType>Form</SubType>
@@ -106,6 +113,9 @@
     <EmbeddedResource Include="Bezoeker.resx">
       <DependentUpon>Bezoeker.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DialogForms\BouwZaalDialog.resx">
+      <DependentUpon>BouwZaalDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DialogForms\MaakVertoningDialog.resx">
       <DependentUpon>MaakVertoningDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -114,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DialogForms\RegistreerMedewerkerDialog.resx">
       <DependentUpon>RegistreerMedewerkerDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Leden.resx">
+      <DependentUpon>Leden.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
