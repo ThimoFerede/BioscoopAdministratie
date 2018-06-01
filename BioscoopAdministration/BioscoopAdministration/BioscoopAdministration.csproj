@@ -46,19 +46,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bioscoop\Bioscoop.cs" />
-<<<<<<< HEAD
     <Compile Include="DialogForms\BouwZaalDialog.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DialogForms\BouwZaalDialog.Designer.cs">
       <DependentUpon>BouwZaalDialog.cs</DependentUpon>
-=======
-    <Compile Include="DialogForms\MaakDigitaleKopieDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DialogForms\MaakDigitaleKopieDialog.Designer.cs">
-      <DependentUpon>MaakDigitaleKopieDialog.cs</DependentUpon>
->>>>>>> cd41b2a6346da1d86b98eeefe1358f085c86c825
     </Compile>
     <Compile Include="DialogForms\MaakVertoningDialog.cs">
       <SubType>Form</SubType>
@@ -121,13 +113,8 @@
     <EmbeddedResource Include="Bezoeker.resx">
       <DependentUpon>Bezoeker.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="DialogForms\BouwZaalDialog.resx">
       <DependentUpon>BouwZaalDialog.cs</DependentUpon>
-=======
-    <EmbeddedResource Include="DialogForms\MaakDigitaleKopieDialog.resx">
-      <DependentUpon>MaakDigitaleKopieDialog.cs</DependentUpon>
->>>>>>> cd41b2a6346da1d86b98eeefe1358f085c86c825
     </EmbeddedResource>
     <EmbeddedResource Include="DialogForms\MaakVertoningDialog.resx">
       <DependentUpon>MaakVertoningDialog.cs</DependentUpon>
