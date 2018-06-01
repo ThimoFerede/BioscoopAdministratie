@@ -7,7 +7,7 @@ using BioscoopAdministration.Producten;
 
 namespace BioscoopAdministration
 {
-    public class Bioscoopvertoning : Film
+    public class Bioscoopvertoning : Film, IInfo
     {
         public DateTime Begintijd { get; private set; }
         public DateTime Eindtijd { get { return Begintijd.AddMinutes(base.Speelduur); } }
@@ -15,6 +15,31 @@ namespace BioscoopAdministration
         public Zaal BioscoopZaal { get; private set; }
         public List<Bestelling> Bestellingen { get; private set; }
         public double Prijs { get; private set; }
+        public string InfoString
+        {
+            get
+            {
+                return "Bioscoopvertoning van " + this.Titel + Environment.NewLine +
+                        "Datum: " + this.Begintijd.ToShortDateString() + Environment.NewLine +
+                        "Tijd: " + this.Begintijd.ToShortTimeString() + Environment.NewLine +
+                        "Zaal: " + this.BioscoopZaal.Zaalnummer + " kwaliteit: " + this.Film_kwaliteit;
+            }
+        }
+
+        public string InfoLijstNaam
+        {
+            get
+            {
+                return "Bestellingen";
+            }
+        }
+        public List<object> InfoLijst
+        {
+            get
+            {
+                return Bestellingen.Cast<object>().ToList();
+            }
+        }
 
         public Bioscoopvertoning(
             string titel, 
@@ -41,7 +66,8 @@ namespace BioscoopAdministration
             Film film,
             DateTime begintijd,
             Filmkwaliteit filmkwaliteit,
-            Zaal zaal)
+            Zaal zaal,
+            double prijs)
 
             : base(film.Titel, film.Jaar, film.Speelduur, film.Taal, film.Leeftijdscategorie, film.Genres)
         {
@@ -49,6 +75,7 @@ namespace BioscoopAdministration
             BioscoopZaal = zaal;
             Film_kwaliteit = filmkwaliteit;
             Bestellingen = new List<Bestelling>();
+            Prijs = prijs;
         }
 
         /// <summary>

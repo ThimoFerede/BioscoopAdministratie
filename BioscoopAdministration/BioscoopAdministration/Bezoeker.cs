@@ -32,16 +32,19 @@ namespace BioscoopAdministration
             double age = DateTime.Now.Subtract(geboortedatumDTP.Value).TotalDays / 365;
             double minAge = (lblBioscoopvertoning.SelectedItem as Bioscoopvertoning).Leeftijdscategorie;
             if (minAge > age) {MessageBox.Show("Je bent nog te jong voor deze film"); return;}
+            if (!txtEmail.Text.Contains('@')) { MessageBox.Show("Incorrect emailadres"); txtEmail.Focus(); return; }
 
             string naam = txtNaam.Text;
             string adres = txtAdres.Text;
             string woonplaats = txtWoonplaats.Text;
             DateTime geboortedatum = geboortedatumDTP.Value;
             Bezoeker bezoeker = new Bezoeker(naam, adres, woonplaats, geboortedatum);
+            Bioscoop.VoegPersoonToe(bezoeker);
 
             Bestelling bestelling = new Bestelling(bezoeker, lblBioscoopvertoning.SelectedItem as Bioscoopvertoning, lblStoelen.SelectedItem as Stoel);
 
             MessageBox.Show("Betaal: €" + bestelling.Price);
+            this.Close();
         }
 
         private void UpdateGuiInfo()

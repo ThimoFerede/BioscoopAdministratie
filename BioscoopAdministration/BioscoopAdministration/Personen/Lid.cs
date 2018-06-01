@@ -7,12 +7,36 @@ using BioscoopAdministration.Producten;
 
 namespace BioscoopAdministration
 {
-    public class Lid : Persoon
+    public class Lid : Persoon,IInfo
     {
         public List<Bestelling> Bestellingen { get; private set; }
         public List<Uitlening> Uitleningen { get; private set; }
         public string Gebruikersnaam { get; private set; }
         private string Wachtwoord;
+        public string InfoString
+        {
+            get
+            {
+                return "Lid: " + base.Naam + " aka:" + Gebruikersnaam + Environment.NewLine + " Woonplaats: " + base.Adres + " " + base.Woonplaats;
+            }
+        }
+
+        public string InfoLijstNaam
+        {
+            get
+            {
+                return "Producten";
+            }
+        }
+        public List<object> InfoLijst
+        {
+            get
+            {
+                List<object> infoLijst = Bestellingen.Cast<object>().ToList();
+                infoLijst.Concat(Uitleningen.Cast<object>().ToList());
+                return infoLijst;
+            }
+        }
         public Lid
             (
                 string naam,
@@ -74,7 +98,7 @@ namespace BioscoopAdministration
 
         public override string ToString()
         {
-            return base.Naam;
+            return Gebruikersnaam;
         }
     }
 }

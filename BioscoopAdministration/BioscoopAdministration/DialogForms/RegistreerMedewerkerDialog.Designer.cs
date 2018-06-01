@@ -1,6 +1,6 @@
-﻿namespace BioscoopAdministration
+﻿namespace BioscoopAdministration.DialogForms
 {
-    partial class formRegistreer
+    partial class RegistreerMedewerkerDialog
     {
         /// <summary>
         /// Required designer variable.
@@ -29,9 +29,10 @@
         private void InitializeComponent()
         {
             this.gbPersoonlijk = new System.Windows.Forms.GroupBox();
+            this.chbVoorwaarde = new System.Windows.Forms.CheckBox();
+            this.dtpGeboortedatum = new System.Windows.Forms.DateTimePicker();
             this.btnRegistreer = new System.Windows.Forms.Button();
             this.txtWachtwoord = new System.Windows.Forms.TextBox();
-            this.txtGebruikersnaam = new System.Windows.Forms.TextBox();
             this.txtWoonplaats = new System.Windows.Forms.TextBox();
             this.txtAdres = new System.Windows.Forms.TextBox();
             this.txtNaam = new System.Windows.Forms.TextBox();
@@ -41,18 +42,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.chbVoorwaarde = new System.Windows.Forms.CheckBox();
+            this.nudId = new System.Windows.Forms.NumericUpDown();
             this.gbPersoonlijk.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudId)).BeginInit();
             this.SuspendLayout();
             // 
             // gbPersoonlijk
             // 
+            this.gbPersoonlijk.Controls.Add(this.nudId);
             this.gbPersoonlijk.Controls.Add(this.chbVoorwaarde);
-            this.gbPersoonlijk.Controls.Add(this.dateTimePicker1);
+            this.gbPersoonlijk.Controls.Add(this.dtpGeboortedatum);
             this.gbPersoonlijk.Controls.Add(this.btnRegistreer);
             this.gbPersoonlijk.Controls.Add(this.txtWachtwoord);
-            this.gbPersoonlijk.Controls.Add(this.txtGebruikersnaam);
             this.gbPersoonlijk.Controls.Add(this.txtWoonplaats);
             this.gbPersoonlijk.Controls.Add(this.txtAdres);
             this.gbPersoonlijk.Controls.Add(this.txtNaam);
@@ -65,9 +66,27 @@
             this.gbPersoonlijk.Location = new System.Drawing.Point(12, 12);
             this.gbPersoonlijk.Name = "gbPersoonlijk";
             this.gbPersoonlijk.Size = new System.Drawing.Size(338, 248);
-            this.gbPersoonlijk.TabIndex = 1;
+            this.gbPersoonlijk.TabIndex = 2;
             this.gbPersoonlijk.TabStop = false;
             this.gbPersoonlijk.Text = "Persoonlijke gegevens:";
+            // 
+            // chbVoorwaarde
+            // 
+            this.chbVoorwaarde.AutoSize = true;
+            this.chbVoorwaarde.Location = new System.Drawing.Point(9, 190);
+            this.chbVoorwaarde.Name = "chbVoorwaarde";
+            this.chbVoorwaarde.Size = new System.Drawing.Size(244, 17);
+            this.chbVoorwaarde.TabIndex = 14;
+            this.chbVoorwaarde.Text = "Ik ga akkoord met de algemene voorwaarden.";
+            this.chbVoorwaarde.UseVisualStyleBackColor = true;
+            this.chbVoorwaarde.CheckedChanged += new System.EventHandler(this.chbVoorwaarde_CheckedChanged);
+            // 
+            // dtpGeboortedatum
+            // 
+            this.dtpGeboortedatum.Location = new System.Drawing.Point(123, 100);
+            this.dtpGeboortedatum.Name = "dtpGeboortedatum";
+            this.dtpGeboortedatum.Size = new System.Drawing.Size(200, 20);
+            this.dtpGeboortedatum.TabIndex = 11;
             // 
             // btnRegistreer
             // 
@@ -75,8 +94,9 @@
             this.btnRegistreer.Name = "btnRegistreer";
             this.btnRegistreer.Size = new System.Drawing.Size(314, 23);
             this.btnRegistreer.TabIndex = 1;
-            this.btnRegistreer.Text = "Registreer als lid";
+            this.btnRegistreer.Text = "Registreer medewerker";
             this.btnRegistreer.UseVisualStyleBackColor = true;
+            this.btnRegistreer.Click += new System.EventHandler(this.btnRegistreer_Click);
             // 
             // txtWachtwoord
             // 
@@ -84,13 +104,6 @@
             this.txtWachtwoord.Name = "txtWachtwoord";
             this.txtWachtwoord.Size = new System.Drawing.Size(200, 20);
             this.txtWachtwoord.TabIndex = 10;
-            // 
-            // txtGebruikersnaam
-            // 
-            this.txtGebruikersnaam.Location = new System.Drawing.Point(123, 134);
-            this.txtGebruikersnaam.Name = "txtGebruikersnaam";
-            this.txtGebruikersnaam.Size = new System.Drawing.Size(200, 20);
-            this.txtGebruikersnaam.TabIndex = 9;
             // 
             // txtWoonplaats
             // 
@@ -127,9 +140,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(6, 137);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 13);
+            this.label5.Size = new System.Drawing.Size(19, 13);
             this.label5.TabIndex = 4;
-            this.label5.Text = "Gebruikersnaam:";
+            this.label5.Text = "Id:";
             // 
             // label4
             // 
@@ -167,33 +180,24 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Naam:";
             // 
-            // dateTimePicker1
+            // nudId
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(123, 100);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 11;
+            this.nudId.Location = new System.Drawing.Point(123, 135);
+            this.nudId.Name = "nudId";
+            this.nudId.Size = new System.Drawing.Size(120, 20);
+            this.nudId.TabIndex = 15;
             // 
-            // chbVoorwaarde
-            // 
-            this.chbVoorwaarde.AutoSize = true;
-            this.chbVoorwaarde.Location = new System.Drawing.Point(9, 190);
-            this.chbVoorwaarde.Name = "chbVoorwaarde";
-            this.chbVoorwaarde.Size = new System.Drawing.Size(244, 17);
-            this.chbVoorwaarde.TabIndex = 14;
-            this.chbVoorwaarde.Text = "Ik ga akkoord met de algemene voorwaarden.";
-            this.chbVoorwaarde.UseVisualStyleBackColor = true;
-            // 
-            // formRegistreer
+            // RegistreerMedewerkerDialog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(358, 275);
+            this.ClientSize = new System.Drawing.Size(357, 264);
             this.Controls.Add(this.gbPersoonlijk);
-            this.Name = "formRegistreer";
-            this.Text = "Registeer ";
+            this.Name = "RegistreerMedewerkerDialog";
+            this.Text = "RegistreerMedewerkerDialog";
             this.gbPersoonlijk.ResumeLayout(false);
             this.gbPersoonlijk.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudId)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -202,10 +206,9 @@
 
         private System.Windows.Forms.GroupBox gbPersoonlijk;
         private System.Windows.Forms.CheckBox chbVoorwaarde;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpGeboortedatum;
         private System.Windows.Forms.Button btnRegistreer;
         private System.Windows.Forms.TextBox txtWachtwoord;
-        private System.Windows.Forms.TextBox txtGebruikersnaam;
         private System.Windows.Forms.TextBox txtWoonplaats;
         private System.Windows.Forms.TextBox txtAdres;
         private System.Windows.Forms.TextBox txtNaam;
@@ -215,5 +218,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.NumericUpDown nudId;
     }
 }

@@ -68,8 +68,8 @@ namespace BioscoopAdministration
             for (int i = 0; i < 20; i++)
             {
                 Film film = new Film("Film" + i, 2018, 2, "Engels", 16, null);
-                VoegFilmToe(new Bioscoopvertoning(film, DateTime.Now.AddHours(i), (Bioscoopvertoning.Filmkwaliteit)(i % 4), Zalen[i % 5]));
-                VoegFilmToe(new DigitaleKopie(film, i));
+                VoegFilmToe(new Bioscoopvertoning(film, DateTime.Now.AddHours(i), (Bioscoopvertoning.Filmkwaliteit)(i % 4), Zalen[i % 5], i));
+                VoegFilmToe(new DigitaleKopie(film, i*123, i));
             }
 
             //Maak personen
@@ -80,9 +80,21 @@ namespace BioscoopAdministration
 
             for(int i = 0; i < 100; i++)
             {
-                VoegPersoonToe(new Lid("Lid", "Straat 15", "Plaats", new DateTime(1, 1, 1), "Gebruikersnaam", "1234"));
+                Lid NieuwLid = new Lid("Lid", "Straat 15", "Plaats", new DateTime(1, 1, 1), "Gebruikersnaam", "1234");
+                for(int j = 0; j < i % 3; j++)
+                {
+                    Bestelling NieuweBestelling = new Bestelling(NieuwLid, Vertoningen[(i * j) % 20], Vertoningen[(i * j) % 20].BioscoopZaal.Stoelen[i % Vertoningen[(i * j) % 20].BioscoopZaal.Stoelen.Count]);
+                    Uitlening NieuweUitlening = new Uitlening(DateTime.Now.AddDays(j), DateTime.Now.AddDays(j + 3), DigitaleKopieen[i%20], NieuwLid);
+                }
+                VoegPersoonToe(NieuwLid);
             }
 
+            for(int i = 0; i < 200; i++)
+            {
+                Bezoeker NieuweBezoeker = new Bezoeker("Bezoeker", "Straat 15", "Plaats", new DateTime(1, 1, 1));
+                Bestelling NieuweBestelling = new Bestelling(NieuweBezoeker, Vertoningen[i % 20], Vertoningen[i % 20].BioscoopZaal.Stoelen[i % Vertoningen[i % 20].BioscoopZaal.Stoelen.Count]);
+                VoegPersoonToe(NieuweBezoeker);
+            }
         }
 
         public void VoegFilmToe(Film film)

@@ -70,6 +70,7 @@
             // 
             this.txtWW.Location = new System.Drawing.Point(110, 93);
             this.txtWW.Name = "txtWW";
+            this.txtWW.PasswordChar = '*';
             this.txtWW.Size = new System.Drawing.Size(232, 20);
             this.txtWW.TabIndex = 5;
             // 
@@ -129,6 +130,7 @@
             this.btnRegistreer.TabIndex = 8;
             this.btnRegistreer.Text = "Registreer als lid";
             this.btnRegistreer.UseVisualStyleBackColor = true;
+            this.btnRegistreer.Click += new System.EventHandler(this.btnRegistreer_Click);
             // 
             // btnBestelB
             // 
@@ -150,6 +152,7 @@
             this.Controls.Add(this.gbLogIn);
             this.Name = "formLogIn";
             this.Text = "Log in";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formLogIn_FormClosing);
             this.gbLogIn.ResumeLayout(false);
             this.gbLogIn.PerformLayout();
             this.ResumeLayout(false);

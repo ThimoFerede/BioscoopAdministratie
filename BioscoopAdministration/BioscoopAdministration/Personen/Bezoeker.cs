@@ -7,9 +7,31 @@ using BioscoopAdministration.Producten;
 
 namespace BioscoopAdministration
 {
-    public class Bezoeker : Persoon
+    public class Bezoeker : Persoon, IInfo
     {
         public Bestelling Bestelling { get; private set; }
+        public string InfoString
+        {
+            get
+            {
+                return "Bezoeker: " + base.Naam + Environment.NewLine + " Woonplaats: " + base.Adres + " " + base.Woonplaats;
+            }
+        }
+
+        public string InfoLijstNaam
+        {
+            get
+            {
+                return "Bestelling";
+            }
+        }
+        public List<object> InfoLijst
+        {
+            get
+            {
+                return new List<object>() { Bestelling };
+            }
+        }
         public Bezoeker
             (
                 string naam,

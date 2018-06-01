@@ -6,10 +6,32 @@ using System.Threading.Tasks;
 
 namespace BioscoopAdministration
 {
-    public class Medewerker : Persoon
+    public class Medewerker : Persoon,IInfo
     {
         public int MedewerkerID { get; private set; }
         private string Wachtwoord;
+        public string InfoString
+        {
+            get
+            {
+                return "Medewerker: " + base.Naam + Environment.NewLine + " Woonplaats: " + base.Adres + " " + base.Woonplaats;
+            }
+        }
+
+        public string InfoLijstNaam
+        {
+            get
+            {
+                return "";
+            }
+        }
+        public List<object> InfoLijst
+        {
+            get
+            {
+                return new List<object>();
+            }
+        }
 
         public Medewerker
             (

@@ -7,11 +7,34 @@ using BioscoopAdministration.Producten;
 
 namespace BioscoopAdministration
 {
-    public class Zaal
+    public class Zaal : IInfo
     {
         public int Zaalnummer { get; private set; }
         public Bioscoopvertoning.Filmkwaliteit FilmKwaliteit { get; private set; }
         public List<Stoel> Stoelen { get; private set; }
+        public string InfoString
+        {
+            get
+            {
+                string info = "Zaal: " + Zaalnummer + Environment.NewLine + "Kwaliteit: " + FilmKwaliteit;
+                return info;
+            }
+        }
+
+        public string InfoLijstNaam
+        {
+            get
+            {
+                return "Stoelen";
+            }
+        }
+        public List<object> InfoLijst
+        {
+            get
+            {
+                return Stoelen.Cast<object>().ToList();
+            }
+        }
 
         public Zaal (int zaalnummer, Bioscoopvertoning.Filmkwaliteit filmkwaliteit, int aantal_rijen_stoelen, int aantal_stoelen_per_rij, int aantal_VIP_rijen, int aantal_VIP_per_rij)
         {

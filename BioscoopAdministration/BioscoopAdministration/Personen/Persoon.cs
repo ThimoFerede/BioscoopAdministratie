@@ -16,10 +16,6 @@ namespace BioscoopAdministration
 
         public Persoon(string naam, string adres, string woonplaats, DateTime geboortedatum)
         {
-            if (geboortedatum == null)
-            {
-                throw new ArgumentNullException("geboortedatum", "geboortedatum mag niet null zijn");
-            }
             this.Naam = naam;
             this.Adres = adres;
             this.Woonplaats = woonplaats;

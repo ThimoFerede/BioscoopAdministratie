@@ -7,17 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BioscoopAdministration.DialogForms;
 
 namespace BioscoopAdministration
 {
     public partial class formLogIn : Form
     {
-        public Bioscoop Bios = new Bioscoop("Bios", "Eindhoven");
+        public Bioscoop Bios;
 
         public formLogIn()
         {
             InitializeComponent();
+            Bios = new Bioscoop("Bios", "Eindhoven");
             Bios.MaakStandaardBioscoop();
+        }
+
+        public formLogIn(Bioscoop b)
+        {
+            InitializeComponent();
+            Bios = b;
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)
@@ -58,6 +66,17 @@ namespace BioscoopAdministration
         {
             formBezoeker formBezoeker = new formBezoeker(Bios);
             formBezoeker.Show();
+        }
+
+        private void formLogIn_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnRegistreer_Click(object sender, EventArgs e)
+        {
+            formRegistreer form = new formRegistreer(Bios);
+            form.Show();
         }
     }
 }

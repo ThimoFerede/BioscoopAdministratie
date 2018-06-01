@@ -46,9 +46,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bioscoop\Bioscoop.cs" />
+    <Compile Include="DialogForms\MaakVertoningDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForms\MaakVertoningDialog.Designer.cs">
+      <DependentUpon>MaakVertoningDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForms\RegistreerMedewerkerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForms\RegistreerMedewerkerDialog.Designer.cs">
+      <DependentUpon>RegistreerMedewerkerDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Films\Bioscoopvertoning.cs" />
     <Compile Include="Films\DigitaleKopie.cs" />
     <Compile Include="Films\Film.cs" />
+    <Compile Include="IInfo.cs" />
     <Compile Include="Leden.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,11 +74,11 @@
     <Compile Include="Bezoeker.Designer.cs">
       <DependentUpon>Bezoeker.cs</DependentUpon>
     </Compile>
-    <Compile Include="RegistreerLid.cs">
+    <Compile Include="DialogForms\RegistreerLidDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RegistreerLid.Designer.cs">
-      <DependentUpon>RegistreerLid.cs</DependentUpon>
+    <Compile Include="DialogForms\RegistreerLidDialog.Designer.cs">
+      <DependentUpon>RegistreerLidDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Medewerker.cs">
       <SubType>Form</SubType>
@@ -92,6 +105,15 @@
     <Compile Include="Bioscoop\Zaal.cs" />
     <EmbeddedResource Include="Bezoeker.resx">
       <DependentUpon>Bezoeker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForms\MaakVertoningDialog.resx">
+      <DependentUpon>MaakVertoningDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForms\RegistreerLidDialog.resx">
+      <DependentUpon>RegistreerLidDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForms\RegistreerMedewerkerDialog.resx">
+      <DependentUpon>RegistreerMedewerkerDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>

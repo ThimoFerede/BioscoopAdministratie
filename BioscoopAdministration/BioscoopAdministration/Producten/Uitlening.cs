@@ -7,12 +7,34 @@ using BioscoopAdministration.Producten;
 
 namespace BioscoopAdministration.Producten
 {
-    public class Uitlening : IPrice
+    public class Uitlening : IPrice,IInfo
     {
         public DateTime Startdatum { get; private set; }
         public DateTime Einddatum { get; private set; }
         public Lid Lid { get; private set; }
         public DigitaleKopie DigitaleKopie { get; private set; }
+        public string InfoString
+        {
+            get
+            {
+                return "Uitlening van: " + Lid.Naam + Environment.NewLine + DigitaleKopie.InfoString;
+            }
+        }
+
+        public string InfoLijstNaam
+        {
+            get
+            {
+                return "Digitalekopie";
+            }
+        }
+        public List<object> InfoLijst
+        {
+            get
+            {
+                return new List<object>() { DigitaleKopie };
+            }
+        }
 
         public double Price
         {
@@ -33,6 +55,11 @@ namespace BioscoopAdministration.Producten
             DigitaleKopie = digitaleKopie ?? throw new ArgumentNullException();
             Lid.VoegUitleningToe(this);
             DigitaleKopie.VoegUitleningToe(this);
+        }
+
+        public override string ToString()
+        {
+            return "Uitlening " + DigitaleKopie.Titel + " voor " + Lid.Naam;
         }
     }
 }

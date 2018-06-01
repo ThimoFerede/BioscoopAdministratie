@@ -7,11 +7,34 @@ using BioscoopAdministration.Producten;
 
 namespace BioscoopAdministration
 {
-    public class DigitaleKopie : Film
+    public class DigitaleKopie : Film, IInfo
     {
         public int Toegangscode { get; private set; }
         public List<Uitlening> Uitleningen { get; private set; }
         public double PrijsPerDag { get; private set; }
+        public string InfoString
+        {
+            get
+            {
+                return "Digitalekopie van " + Titel + Environment.NewLine +
+                        "Prijs per dag: €" + PrijsPerDag;
+            }
+        }
+
+        public string InfoLijstNaam
+        {
+            get
+            {
+                return "Uitleningen";
+            }
+        }
+        public List<object> InfoLijst
+        {
+            get
+            {
+                return Uitleningen.Cast<object>().ToList();
+            }
+        }
 
         public DigitaleKopie(
             string titel, 
@@ -32,11 +55,13 @@ namespace BioscoopAdministration
 
         public DigitaleKopie(
             Film film, 
-            int toegangscode)
+            int toegangscode,
+            double prijsPerDag)
             : base(film.Titel, film.Jaar, film.Speelduur, film.Taal, film.Leeftijdscategorie, film.Genres)
         {
             Toegangscode = toegangscode;
             Uitleningen = new List<Uitlening>();
+            PrijsPerDag = prijsPerDag;
         }
 
         /// <summary>

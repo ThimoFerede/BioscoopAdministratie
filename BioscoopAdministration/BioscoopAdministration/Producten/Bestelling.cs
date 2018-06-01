@@ -6,11 +6,33 @@ using System.Threading.Tasks;
 
 namespace BioscoopAdministration.Producten
 {
-    public class Bestelling : IPrice
+    public class Bestelling : IPrice, IInfo
     {
         public Persoon Klant { get; private set; }
         public Bioscoopvertoning Bioscoopvertoning { get; private set; }
         public Stoel Stoel { get; private set; }
+        public string InfoString
+        {
+            get
+            {
+                return "Bestelling van: " + Klant.Naam + Environment.NewLine + Bioscoopvertoning.InfoString + Environment.NewLine + Stoel.InfoString;
+            }
+        }
+
+        public string InfoLijstNaam
+        {
+            get
+            {
+                return "Vertoning";
+            }
+        }
+        public List<object> InfoLijst
+        {
+            get
+            {
+                return new List<object>() { Bioscoopvertoning};
+            }
+        }
 
         public double Price
         {
@@ -38,7 +60,7 @@ namespace BioscoopAdministration.Producten
 
         public override string ToString()
         {
-            return "Bestelling ";
+            return "Bestelling " + Bioscoopvertoning.Titel + " voor " + Klant.Naam;
         }
     }
 }
