@@ -19,7 +19,7 @@ namespace BioscoopAdministration_tests
             bioscoop.MaakStandaardBioscoop();
 
             Assert.AreEqual(5, bioscoop.Zalen.Count);
-            Assert.AreEqual(20, bioscoop.Films.Count);
+            Assert.AreEqual(40, bioscoop.Films.Count);
             Assert.AreEqual(350, bioscoop.Personen.Count);
         }
 
@@ -63,9 +63,12 @@ namespace BioscoopAdministration_tests
             Bioscoop bioscoop = new Bioscoop(naam, locatie);
             Film f = new Film(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres);
             bioscoop.MaakStandaardBioscoop();
+            int count = bioscoop.Films.Count;
+            bioscoop.VoegFilmToe(f);
+            bioscoop.VerwijderFilm(f);
             bioscoop.VerwijderFilm(f);
 
-            Assert.AreEqual(5, bioscoop.Films.Count);
+            Assert.AreEqual(count, bioscoop.Films.Count);
         }
 
         [TestMethod]
@@ -114,7 +117,7 @@ namespace BioscoopAdministration_tests
             string naam = "Bioscoop";
             string locatie = "Eindhoven";
 
-            int zaalnummer = 1;
+            int zaalnummer = 10;
             Bioscoopvertoning.Filmkwaliteit filmkwaliteit = Bioscoopvertoning.Filmkwaliteit._2D;
             int aantal_rijen = 5;
             int aantal_stoelen_rij = 20;

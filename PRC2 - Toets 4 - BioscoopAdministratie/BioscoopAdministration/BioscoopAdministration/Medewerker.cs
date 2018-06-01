@@ -361,5 +361,11 @@ namespace BioscoopAdministration
                 }
             }
         }
+
+        private void btnBouwZaal_Click(object sender, EventArgs e)
+        {
+            BouwZaalDialog zaalDialog = new BouwZaalDialog(bioscoop);
+            zaalDialog.Show();
+        }
     }
 }

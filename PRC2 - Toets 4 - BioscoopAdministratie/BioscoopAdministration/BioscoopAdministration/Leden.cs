@@ -31,6 +31,9 @@ namespace BioscoopAdministration
 
         private void ShowInfo()
         {
+            lbGeschiedenis.Items.Clear();
+            lbFilms.Items.Clear();
+            
             txtNaam.Text = lid.Naam;
             txtAdres.Text = lid.Adres;
             txtWoonplaats.Text = lid.Woonplaats;
@@ -48,7 +51,7 @@ namespace BioscoopAdministration
 
             foreach (Film f in Bios.Films)
             {
-                lbGeschiedenis.Items.Add(f);
+                lbFilms.Items.Add(f);
             }
         }
 
@@ -56,6 +59,11 @@ namespace BioscoopAdministration
         {
             if(lbFilms.SelectedItem is Bioscoopvertoning)
             {
+                if (lbStoel.SelectedItem == null)
+                {
+                    MessageBox.Show("Selecteer een stoel");
+                    return;
+                }
                 Bioscoopvertoning selectedBV = (Bioscoopvertoning)lbFilms.SelectedItem;
                 Stoel selectedStoel = (Stoel)lbStoel.SelectedItem;
                 Bestelling bestelling = new Bestelling(lid, selectedBV, selectedStoel);
@@ -64,7 +72,7 @@ namespace BioscoopAdministration
             }
             else
             {
-                MessageBox.Show("Deze film draait momenteel niet in de bioscoop.");
+                MessageBox.Show("Selecteer een vertoning uit de lijst met films");
             }
         }
 
@@ -79,7 +87,7 @@ namespace BioscoopAdministration
             }
             else
             {
-                MessageBox.Show("Van deze film is nog geen ditigale kopie beschikbaar.");
+                MessageBox.Show("Selecteer een kopie uit de lijst met films");
             }
         }
 
@@ -88,15 +96,18 @@ namespace BioscoopAdministration
             if(lbFilms.SelectedItem is Bioscoopvertoning)
             {
                 Bioscoopvertoning bv = (Bioscoopvertoning)lbFilms.SelectedItem;
+                lbStoel.Items.Clear();
                 foreach(Stoel stoel in bv.BioscoopZaal.Stoelen)
                 {
+                    bool bezet = false;
                     foreach(Bestelling b in bv.Bestellingen)
                     {
-                        if(stoel != b.Stoel)
+                        if(stoel == b.Stoel)
                         {
-                            lbStoel.Items.Add(stoel);
+                            bezet = true;
                         }
                     }
+                    if (!bezet) lbStoel.Items.Add(stoel);
                 }
             }
         }
