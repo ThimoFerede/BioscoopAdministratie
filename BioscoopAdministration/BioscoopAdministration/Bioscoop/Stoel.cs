@@ -21,7 +21,9 @@ namespace BioscoopAdministration
 
         public override string ToString()
         {
-            return "Rij: " + Rij + " - Stoelnummer: " + Stoelnummer + " - VIP plaats: " + VIPplaats;
+            string info = "Rij:" + Rij + " - Nr:" + Stoelnummer;
+            if (VIPplaats) info += " - VIP";
+            return info;
         }
     }
 }

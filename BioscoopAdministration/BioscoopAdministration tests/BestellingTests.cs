@@ -36,7 +36,7 @@ namespace BioscoopAdministration_tests
             //Test properties
             Assert.AreEqual(bezoeker, bestelling.Klant);
             Assert.AreEqual(bioscoopvertoning, bestelling.Bioscoopvertoning);
-            Assert.AreEqual(zaal, bestelling.Zaal);
+            Assert.AreEqual(zaal, bestelling.Bioscoopvertoning.BioscoopZaal);
             Assert.AreEqual(zaal.Stoelen[0], bestelling.Stoel);
         }
 

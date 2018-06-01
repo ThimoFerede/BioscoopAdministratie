@@ -90,20 +90,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Bioscoop\Stoel.cs" />
     <Compile Include="Bioscoop\Zaal.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>LogIn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Leden.resx">
-      <DependentUpon>Leden.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Bezoeker.resx">
       <DependentUpon>Bezoeker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogIn.resx">
       <DependentUpon>LogIn.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="RegistreerLid.resx">
-      <DependentUpon>RegistreerLid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Medewerker.resx">
       <DependentUpon>Medewerker.cs</DependentUpon>

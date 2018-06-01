@@ -57,6 +57,7 @@
             this.lbZalen = new System.Windows.Forms.ListBox();
             this.lbBioscoopvertoningen = new System.Windows.Forms.ListBox();
             this.btnLogUit = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbFilms
@@ -318,11 +319,22 @@
             this.btnLogUit.Text = "Log uit";
             this.btnLogUit.UseVisualStyleBackColor = true;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Location = new System.Drawing.Point(696, 415);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(96, 23);
+            this.btnRefresh.TabIndex = 29;
+            this.btnRefresh.Text = "refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // formMedewerker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(809, 415);
+            this.ClientSize = new System.Drawing.Size(809, 443);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.btnLogUit);
             this.Controls.Add(this.lbBioscoopvertoningen);
             this.Controls.Add(this.lbZalen);
@@ -390,5 +402,6 @@
         private System.Windows.Forms.ListBox lbZalen;
         private System.Windows.Forms.ListBox lbBioscoopvertoningen;
         private System.Windows.Forms.Button btnLogUit;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

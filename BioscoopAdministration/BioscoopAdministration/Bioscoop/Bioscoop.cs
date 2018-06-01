@@ -11,8 +11,36 @@ namespace BioscoopAdministration
     {
         public List<Persoon> Personen { get; private set; }
         public List<Film> Films { get; private set; }
-        public List<Bioscoopvertoning> Vertoningen { get; private set; }
-        public List<DigitaleKopie> DigitaleKopieen { get; private set; }
+        public List<Bioscoopvertoning> Vertoningen
+        {
+            get
+            {
+                List<Bioscoopvertoning> vertoningen = new List<Bioscoopvertoning>();
+                foreach(Film f in Films)
+                {
+                    if(f is Bioscoopvertoning)
+                    {
+                        vertoningen.Add(f as Bioscoopvertoning);
+                    }
+                }
+                return vertoningen;
+            }
+        }
+        public List<DigitaleKopie> DigitaleKopieen
+        {
+            get
+            {
+                List<DigitaleKopie> kopieen = new List<DigitaleKopie>();
+                foreach (Film f in Films)
+                {
+                    if (f is DigitaleKopie)
+                    {
+                        kopieen.Add(f as DigitaleKopie);
+                    }
+                }
+                return kopieen;
+            }
+        }
         public List<Zaal> Zalen { get; private set; }
 
         private string Naam;
@@ -24,8 +52,6 @@ namespace BioscoopAdministration
             Locatie = locatie;
             Personen = new List<Persoon>();
             Films = new List<Film>();
-            Vertoningen = new List<Bioscoopvertoning>();
-            DigitaleKopieen = new List<DigitaleKopie>();
             Zalen = new List<Zaal>();
         }
 
@@ -42,8 +68,8 @@ namespace BioscoopAdministration
             for (int i = 0; i < 20; i++)
             {
                 Film film = new Film("Film" + i, 2018, 2, "Engels", 16, null);
-                VoegFilmToe(new Bioscoopvertoning(film, DateTime.Now.AddHours(i), Bioscoopvertoning.Filmkwaliteit._Imax_3D, Zalen[i % 5]));
-                VoegDigitaleKopieToe(new DigitaleKopie(film, i));
+                VoegFilmToe(new Bioscoopvertoning(film, DateTime.Now.AddHours(i), (Bioscoopvertoning.Filmkwaliteit)(i % 4), Zalen[i % 5]));
+                VoegFilmToe(new DigitaleKopie(film, i));
             }
 
             //Maak personen
@@ -79,25 +105,6 @@ namespace BioscoopAdministration
             Zalen.Remove(zaal);
         }
 
-        public void VoegVertoningToe(Bioscoopvertoning bioscoopvertoning)
-        {
-            Vertoningen.Add(bioscoopvertoning);
-        }
-
-        public void VerwijderVertoning(Bioscoopvertoning bioscoopvertoning)
-        {
-            Vertoningen.Remove(bioscoopvertoning);
-        }
-
-        public void VoegDigitaleKopieToe(DigitaleKopie digitaleKopie)
-        {
-            DigitaleKopieen.Add(digitaleKopie);
-        }
-
-        public void VerwijderDigitaleKopie(DigitaleKopie digitaleKopie)
-        {
-            DigitaleKopieen.Remove(digitaleKopie);
-        }
         /// <summary>
         /// Voegt een persoon toe aan de lijst
         /// </summary>

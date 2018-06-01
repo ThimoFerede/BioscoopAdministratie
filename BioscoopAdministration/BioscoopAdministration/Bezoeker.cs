@@ -18,6 +18,7 @@ namespace BioscoopAdministration
         {
             InitializeComponent();
             this.Bioscoop = bioscoop;
+            UpdateGuiInfo();
         }
 
         private void btnBestel_Click(object sender, EventArgs e)
@@ -41,6 +42,33 @@ namespace BioscoopAdministration
             Bestelling bestelling = new Bestelling(bezoeker, lblBioscoopvertoning.SelectedItem as Bioscoopvertoning, lblStoelen.SelectedItem as Stoel);
 
             MessageBox.Show("Betaal: €" + bestelling.Price);
+        }
+
+        private void UpdateGuiInfo()
+        {
+            lblBioscoopvertoning.Items.Clear();
+            lblStoelen.Items.Clear();
+            foreach(Bioscoopvertoning vertoning in Bioscoop.Vertoningen)
+            {
+                lblBioscoopvertoning.Items.Add(vertoning);
+            }
+        }
+
+        private void formBezoeker_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //Application.Exit();
+        }
+
+        private void lblBioscoopvertoning_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            lblStoelen.Items.Clear();
+            if(lblBioscoopvertoning.SelectedItem is Bioscoopvertoning)
+            {
+                foreach (Stoel s in (lblBioscoopvertoning.SelectedItem as Bioscoopvertoning).BioscoopZaal.Stoelen)
+                {
+                    lblStoelen.Items.Add(s);
+                }
+            }
         }
     }
 }

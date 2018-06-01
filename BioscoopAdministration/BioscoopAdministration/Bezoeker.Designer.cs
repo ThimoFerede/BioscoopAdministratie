@@ -52,8 +52,9 @@
             this.lblBioscoopvertoning.FormattingEnabled = true;
             this.lblBioscoopvertoning.Location = new System.Drawing.Point(12, 27);
             this.lblBioscoopvertoning.Name = "lblBioscoopvertoning";
-            this.lblBioscoopvertoning.Size = new System.Drawing.Size(171, 225);
+            this.lblBioscoopvertoning.Size = new System.Drawing.Size(238, 225);
             this.lblBioscoopvertoning.TabIndex = 0;
+            this.lblBioscoopvertoning.SelectedIndexChanged += new System.EventHandler(this.lblBioscoopvertoning_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -144,7 +145,7 @@
             this.gbPersoonlijk.Controls.Add(this.label3);
             this.gbPersoonlijk.Controls.Add(this.label2);
             this.gbPersoonlijk.Controls.Add(this.label7);
-            this.gbPersoonlijk.Location = new System.Drawing.Point(322, 12);
+            this.gbPersoonlijk.Location = new System.Drawing.Point(442, 12);
             this.gbPersoonlijk.Name = "gbPersoonlijk";
             this.gbPersoonlijk.Size = new System.Drawing.Size(222, 240);
             this.gbPersoonlijk.TabIndex = 2;
@@ -178,7 +179,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(190, 9);
+            this.label5.Location = new System.Drawing.Point(257, 9);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 13);
             this.label5.TabIndex = 12;
@@ -187,16 +188,16 @@
             // lblStoelen
             // 
             this.lblStoelen.FormattingEnabled = true;
-            this.lblStoelen.Location = new System.Drawing.Point(189, 27);
+            this.lblStoelen.Location = new System.Drawing.Point(256, 27);
             this.lblStoelen.Name = "lblStoelen";
-            this.lblStoelen.Size = new System.Drawing.Size(120, 225);
+            this.lblStoelen.Size = new System.Drawing.Size(180, 225);
             this.lblStoelen.TabIndex = 13;
             // 
             // formBezoeker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(557, 261);
+            this.ClientSize = new System.Drawing.Size(676, 261);
             this.Controls.Add(this.lblStoelen);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.gbPersoonlijk);
@@ -204,6 +205,7 @@
             this.Controls.Add(this.lblBioscoopvertoning);
             this.Name = "formBezoeker";
             this.Text = "Bestel bioscoopvertoning";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formBezoeker_FormClosing);
             this.gbPersoonlijk.ResumeLayout(false);
             this.gbPersoonlijk.PerformLayout();
             this.ResumeLayout(false);

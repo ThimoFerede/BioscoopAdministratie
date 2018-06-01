@@ -17,6 +17,7 @@ namespace BioscoopAdministration
         public formLogIn()
         {
             InitializeComponent();
+            Bios.MaakStandaardBioscoop();
         }
 
         private void btnLogIn_Click(object sender, EventArgs e)
@@ -26,16 +27,37 @@ namespace BioscoopAdministration
                 if (rbLid.Checked)
                 {
                     Lid l = Bios.LogInLid(txtGebruiker.Text, txtWW.Text);
-                    formLeden lid = new formLeden(Bios, l);
-                    lid.Show();
+                    if (l != null)
+                    {
+                        formLeden lid = new formLeden(Bios, l);
+                        lid.Show();
+                    }
+                    else MessageBox.Show("Inloggegevens onjuist");
                 }
                 else if (rbMedewerker.Checked)
                 {
-                    Medewerker m = Bios.LogInMedewerker(Convert.ToInt32(txtGebruiker.Text), txtWW.Text);
-                    formMedewerker medewerker = new formMedewerker(m);
-                    medewerker.Show();
+                    try
+                    {
+                        Medewerker m = Bios.LogInMedewerker(Convert.ToInt32(txtGebruiker.Text), txtWW.Text);
+                        if (m != null)
+                        {
+                            formMedewerker medewerker = new formMedewerker(m, Bios);
+                            medewerker.Show();
+                        }
+                        else MessageBox.Show("Inloggegevens onjuist");
+                    }
+                    catch(FormatException)
+                    {
+                        MessageBox.Show("Inloggegevens onjuist");
+                    }
                 }
             }
+        }
+
+        private void btnBestelB_Click(object sender, EventArgs e)
+        {
+            formBezoeker formBezoeker = new formBezoeker(Bios);
+            formBezoeker.Show();
         }
     }
 }

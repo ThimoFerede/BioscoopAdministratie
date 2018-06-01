@@ -34,10 +34,10 @@
             this.txtWW = new System.Windows.Forms.TextBox();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.gbLogIn = new System.Windows.Forms.GroupBox();
+            this.rbLid = new System.Windows.Forms.RadioButton();
+            this.rbMedewerker = new System.Windows.Forms.RadioButton();
             this.btnRegistreer = new System.Windows.Forms.Button();
             this.btnBestelB = new System.Windows.Forms.Button();
-            this.rbMedewerker = new System.Windows.Forms.RadioButton();
-            this.rbLid = new System.Windows.Forms.RadioButton();
             this.gbLogIn.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,6 +99,28 @@
             this.gbLogIn.TabStop = false;
             this.gbLogIn.Text = "Log in";
             // 
+            // rbLid
+            // 
+            this.rbLid.AutoSize = true;
+            this.rbLid.Location = new System.Drawing.Point(6, 29);
+            this.rbLid.Name = "rbLid";
+            this.rbLid.Size = new System.Drawing.Size(92, 17);
+            this.rbLid.TabIndex = 0;
+            this.rbLid.TabStop = true;
+            this.rbLid.Text = "Ik ben een lid.";
+            this.rbLid.UseVisualStyleBackColor = true;
+            // 
+            // rbMedewerker
+            // 
+            this.rbMedewerker.AutoSize = true;
+            this.rbMedewerker.Location = new System.Drawing.Point(202, 29);
+            this.rbMedewerker.Name = "rbMedewerker";
+            this.rbMedewerker.Size = new System.Drawing.Size(140, 17);
+            this.rbMedewerker.TabIndex = 1;
+            this.rbMedewerker.TabStop = true;
+            this.rbMedewerker.Text = "Ik ben een medewerker.";
+            this.rbMedewerker.UseVisualStyleBackColor = true;
+            // 
             // btnRegistreer
             // 
             this.btnRegistreer.Location = new System.Drawing.Point(12, 177);
@@ -116,28 +138,7 @@
             this.btnBestelB.TabIndex = 9;
             this.btnBestelB.Text = "Bestel bioscoopbestelling als bezoeker";
             this.btnBestelB.UseVisualStyleBackColor = true;
-            // 
-            // rbMedewerker
-            // 
-            this.rbMedewerker.AutoSize = true;
-            this.rbMedewerker.Location = new System.Drawing.Point(202, 29);
-            this.rbMedewerker.Name = "rbMedewerker";
-            this.rbMedewerker.Size = new System.Drawing.Size(140, 17);
-            this.rbMedewerker.TabIndex = 1;
-            this.rbMedewerker.TabStop = true;
-            this.rbMedewerker.Text = "Ik ben een medewerker.";
-            this.rbMedewerker.UseVisualStyleBackColor = true;
-            // 
-            // rbLid
-            // 
-            this.rbLid.AutoSize = true;
-            this.rbLid.Location = new System.Drawing.Point(6, 29);
-            this.rbLid.Name = "rbLid";
-            this.rbLid.Size = new System.Drawing.Size(92, 17);
-            this.rbLid.TabIndex = 0;
-            this.rbLid.TabStop = true;
-            this.rbLid.Text = "Ik ben een lid.";
-            this.rbLid.UseVisualStyleBackColor = true;
+            this.btnBestelB.Click += new System.EventHandler(this.btnBestelB_Click);
             // 
             // formLogIn
             // 
