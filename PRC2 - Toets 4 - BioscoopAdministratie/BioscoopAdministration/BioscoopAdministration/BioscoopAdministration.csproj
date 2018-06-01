@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6F9A56B5-4D29-43B3-904C-E7B06551EA8D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BioscoopAdministration</RootNamespace>
+    <AssemblyName>BioscoopAdministration</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bioscoop\Bioscoop.cs" />
+    <Compile Include="DialogForms\BouwZaalDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForms\BouwZaalDialog.Designer.cs">
+      <DependentUpon>BouwZaalDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForms\MaakDigitaleKopieDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForms\MaakDigitaleKopieDialog.Designer.cs">
+      <DependentUpon>MaakDigitaleKopieDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForms\MaakVertoningDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForms\MaakVertoningDialog.Designer.cs">
+      <DependentUpon>MaakVertoningDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForms\RegistreerMedewerkerDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForms\RegistreerMedewerkerDialog.Designer.cs">
+      <DependentUpon>RegistreerMedewerkerDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Films\Bioscoopvertoning.cs" />
+    <Compile Include="Films\DigitaleKopie.cs" />
+    <Compile Include="Films\Film.cs" />
+    <Compile Include="IInfo.cs" />
+    <Compile Include="Leden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Leden.Designer.cs">
+      <DependentUpon>Leden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Bezoeker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bezoeker.Designer.cs">
+      <DependentUpon>Bezoeker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DialogForms\RegistreerLidDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForms\RegistreerLidDialog.Designer.cs">
+      <DependentUpon>RegistreerLidDialog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Medewerker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Medewerker.Designer.cs">
+      <DependentUpon>Medewerker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NumberAlreadyTakenException.cs" />
+    <Compile Include="Personen\Bezoeker.cs" />
+    <Compile Include="LogIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Personen\Lid.cs" />
+    <Compile Include="Personen\Medewerker.cs" />
+    <Compile Include="Personen\Persoon.cs" />
+    <Compile Include="Producten\Bestelling.cs" />
+    <Compile Include="Producten\IPrice.cs" />
+    <Compile Include="Producten\Uitlening.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Bioscoop\Stoel.cs" />
+    <Compile Include="Bioscoop\Zaal.cs" />
+    <EmbeddedResource Include="Bezoeker.resx">
+      <DependentUpon>Bezoeker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForms\BouwZaalDialog.resx">
+      <DependentUpon>BouwZaalDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForms\MaakDigitaleKopieDialog.resx">
+      <DependentUpon>MaakDigitaleKopieDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForms\MaakVertoningDialog.resx">
+      <DependentUpon>MaakVertoningDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForms\RegistreerLidDialog.resx">
+      <DependentUpon>RegistreerLidDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForms\RegistreerMedewerkerDialog.resx">
+      <DependentUpon>RegistreerMedewerkerDialog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Leden.resx">
+      <DependentUpon>Leden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogIn.resx">
+      <DependentUpon>LogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Medewerker.resx">
+      <DependentUpon>Medewerker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
