@@ -283,5 +283,11 @@ namespace BioscoopAdministration
         {
             VorigSelectedItem();
         }
+
+        private void btnVoegKopieToe_Click(object sender, EventArgs e)
+        {
+            MaakDigitaleKopieDialog digitaleKopieDialog = new MaakDigitaleKopieDialog(bioscoop);
+            digitaleKopieDialog.Show();
+        }
     }
 }

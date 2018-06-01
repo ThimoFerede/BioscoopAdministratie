@@ -46,6 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bioscoop\Bioscoop.cs" />
+    <Compile Include="DialogForms\MaakDigitaleKopieDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DialogForms\MaakDigitaleKopieDialog.Designer.cs">
+      <DependentUpon>MaakDigitaleKopieDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="DialogForms\MaakVertoningDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     <Compile Include="Bioscoop\Zaal.cs" />
     <EmbeddedResource Include="Bezoeker.resx">
       <DependentUpon>Bezoeker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DialogForms\MaakDigitaleKopieDialog.resx">
+      <DependentUpon>MaakDigitaleKopieDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DialogForms\MaakVertoningDialog.resx">
       <DependentUpon>MaakVertoningDialog.cs</DependentUpon>
