@@ -7,6 +7,7 @@ using BioscoopAdministration.Producten;
 
 namespace BioscoopAdministration.Producten
 {
+    [Serializable]
     public class Uitlening : IPrice,IInfo
     {
         public DateTime Startdatum { get; private set; }

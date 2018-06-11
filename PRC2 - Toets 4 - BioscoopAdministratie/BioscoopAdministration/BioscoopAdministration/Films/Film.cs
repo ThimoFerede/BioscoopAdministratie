@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BioscoopAdministration
 {
+    [Serializable]
     public class Film
     {
         public string Titel { get; private set; }

@@ -7,6 +7,7 @@ using BioscoopAdministration.Producten;
 
 namespace BioscoopAdministration
 {
+        [Serializable]
     public class DigitaleKopie : Film, IInfo
     {
         public int Toegangscode { get; private set; }

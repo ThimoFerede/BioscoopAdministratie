@@ -83,28 +83,5 @@ namespace BioscoopAdministration_tests
             Bestelling bes = null;
             b.VoegBestellingToe(bes);
         }
-
-        [TestMethod]
-        public void TestBioscoopvertoningToString()
-        {
-            string titel = "Avengers: Infinity war";
-            int jaar = 2018;
-            int speelduur = 149;
-            string taal = "Engels";
-            int leeftijdscategorie = 12;
-            List<Film.Genre> lijstGenres = new List<Film.Genre>();
-            lijstGenres.Add(Film.Genre.Actiefilm);
-            lijstGenres.Add(Film.Genre.Avontuurfilm);
-            lijstGenres.Add(Film.Genre.Sciencefiction);
-            DateTime begintijd = DateTime.Now;
-            Bioscoopvertoning.Filmkwaliteit filmkwaliteit = Bioscoopvertoning.Filmkwaliteit._Imax_3D;
-            Zaal zaal = new Zaal(1, Bioscoopvertoning.Filmkwaliteit._Imax_3D, 20, 30, 2, 20);
-
-            string bString = "Avengers: Infinity war - 2018 - 149 minuten - Engels - 12 - " + lijstGenres.ToString() + " - " + begintijd.ToString() + " - " + begintijd.AddMinutes(speelduur).ToString() + " - _Imax_3D - " + zaal;
-            Bioscoopvertoning b = new Bioscoopvertoning(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres, begintijd, filmkwaliteit, zaal, 12);
-
-            Assert.AreEqual(bString, b.ToString());
-
-        }
     }
 }

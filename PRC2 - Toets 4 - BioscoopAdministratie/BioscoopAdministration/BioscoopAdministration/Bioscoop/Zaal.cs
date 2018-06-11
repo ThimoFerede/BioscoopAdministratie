@@ -7,6 +7,7 @@ using BioscoopAdministration.Producten;
 
 namespace BioscoopAdministration
 {
+    [Serializable]
     public class Zaal : IInfo
     {
         public int Zaalnummer { get; private set; }

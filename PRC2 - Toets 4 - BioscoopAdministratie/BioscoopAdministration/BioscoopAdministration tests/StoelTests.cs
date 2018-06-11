@@ -20,18 +20,5 @@ namespace BioscoopAdministration_tests
             Assert.AreEqual(stoelnummer, s.Stoelnummer);
             Assert.AreEqual(vipplaats, s.VIPplaats);
         }
-
-        [TestMethod]
-        public void TestStoelToString()
-        {
-            int rij = 1;
-            int stoelnummer = 1;
-            bool vipplaats = false;
-            string infoString = "Rij: 1 - Stoelnummer: 1 - VIP plaats: False";
-
-            Stoel s = new Stoel(rij, stoelnummer, vipplaats);
-
-            Assert.AreEqual(infoString, s.ToString());
-        }
     }
 }

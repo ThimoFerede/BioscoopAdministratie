@@ -31,24 +31,6 @@ namespace BioscoopAdministration_tests
         }
 
         [TestMethod]
-        public void TestToString()
-        {
-            //Maak parameters
-            string naam = "Test Persoon";
-            string adres = "Test Adres";
-            string woonplaats = "Test Woonplaats";
-            DateTime geboortedatum = new DateTime(1, 1, 1);
-            int Id = 5656;
-            string wachtwoord = "Test Wachtwoord";
-
-            //Maak medewerker
-            Medewerker medewerker = new Medewerker(naam, adres, woonplaats, geboortedatum, Id, wachtwoord);
-
-            //Test properties
-            Assert.AreEqual(naam, medewerker.ToString());
-        }
-
-        [TestMethod]
         public void TestWachtwoordControle()
         {
             //Maak parameters
@@ -57,7 +39,7 @@ namespace BioscoopAdministration_tests
             string woonplaats = "Test Woonplaats";
             DateTime geboortedatum = new DateTime(1, 1, 1);
             int Id = 5656;
-            string wachtwoord = "Test Wachtwoord";
+            string wachtwoord = "Correct Wachtwoord";
 
             //Maak medewerker
             Medewerker medewerker = new Medewerker(naam, adres, woonplaats, geboortedatum, Id, wachtwoord);

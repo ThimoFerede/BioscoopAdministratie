@@ -7,6 +7,7 @@ using BioscoopAdministration.Producten;
 
 namespace BioscoopAdministration
 {
+    [Serializable]
     public class Bioscoopvertoning : Film, IInfo
     {
         public DateTime Begintijd { get; private set; }

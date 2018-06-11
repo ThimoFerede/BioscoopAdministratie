@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BioscoopAdministration
 {
+        [Serializable]
     public class Medewerker : Persoon,IInfo
     {
         public int MedewerkerID { get; private set; }

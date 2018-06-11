@@ -307,8 +307,14 @@ namespace BioscoopAdministration
                 {
                     try
                     {
-                        bioscoop.Load(fileInfo.FullName);
+                        Bioscoop NewBioscoop = bioscoop.Load(fileInfo.FullName);
+                        if (NewBioscoop != null) bioscoop = NewBioscoop;
+                        else
+                        {
+                            MessageBox.Show("Loading failed");
+                        }
                         ShowInfo();
+                        refreshData();
                         MessageBox.Show("Loading completed");
                     }
                     catch (SerializationException ex)

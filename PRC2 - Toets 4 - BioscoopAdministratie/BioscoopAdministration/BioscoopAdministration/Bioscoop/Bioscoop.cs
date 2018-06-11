@@ -10,6 +10,7 @@ using System.Runtime.Serialization;
 
 namespace BioscoopAdministration
 {
+    [Serializable]
     public class Bioscoop
     {
         public List<Persoon> Personen { get; private set; }
@@ -209,24 +210,28 @@ namespace BioscoopAdministration
             using (Stream writer = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.None))
             {
                 BinaryFormatter formatter = new BinaryFormatter();
-                formatter.Serialize(writer, Personen);
+                formatter.Serialize(writer, this);
                 writer.Close();
             }
         }
 
         /// <summary>
-        /// Loads all personen from a file with the given file name using deserialisation.
+        /// Laad een bioscoop uit een textbestand
         /// All personen currently in the administration are removed.
         /// </summary>
         /// <param name="fileName">The file to read from.</param>
-        public void Load(string fileName)
+        public Bioscoop Load(string fileName)
         {
             using (Stream writer = new FileStream(fileName, FileMode.Open, FileAccess.Read, FileShare.Read))
             {
                 BinaryFormatter formatter = new BinaryFormatter();
                 Object obj = formatter.Deserialize(writer);
-                Personen = obj as List<Persoon>;
                 writer.Close();
+                if (obj is Bioscoop)
+                {
+                    return obj as Bioscoop;
+                }
+                else return null;
             }
         }
     }

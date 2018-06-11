@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BioscoopAdministration
 {
+    [Serializable]
     public abstract class Persoon
     {
         public string Naam { get; private set; }

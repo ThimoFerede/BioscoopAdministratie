@@ -31,24 +31,6 @@ namespace BioscoopAdministration_tests
         }
 
         [TestMethod]
-        public void TestToString()
-        {
-            //Maak parameters
-            string naam = "Test Persoon";
-            string adres = "Test Adres";
-            string woonplaats = "Test Woonplaats";
-            DateTime geboortedatum = new DateTime(1, 1, 1);
-            string gebruikersnaam = "Test Gebruikersnaam";
-            string wachtwoord = "Test Wachtwoord";
-
-            //Maak lid
-            Lid lid = new Lid(naam, adres, woonplaats, geboortedatum, gebruikersnaam, wachtwoord);
-
-            //Test properties
-            Assert.AreEqual(naam, lid.ToString());
-        }
-
-        [TestMethod]
         public void TestWachtwoordControle()
         {
             //Maak parameters

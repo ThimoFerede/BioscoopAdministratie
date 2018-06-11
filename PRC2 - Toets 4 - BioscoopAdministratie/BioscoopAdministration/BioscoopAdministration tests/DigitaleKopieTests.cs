@@ -75,25 +75,5 @@ namespace BioscoopAdministration_tests
 
             dk.VoegUitleningToe(u);
         }
-
-        [TestMethod]
-        public void TestDigitalKopieToString()
-        {
-            string titel = "Ex Machina";
-            int jaar = 2014;
-            int speelduur = 108;
-            string taal = "Engels";
-            int leeftijdscategorie = 16;
-            List<Film.Genre> lijstGenres = new List<Film.Genre>();
-            lijstGenres.Add(Film.Genre.Drama);
-            lijstGenres.Add(Film.Genre.Mystery);
-            lijstGenres.Add(Film.Genre.Sciencefiction);
-            int toegangscode = 8370;
-            string dkString = "Ex Machina - 2014 - 108 minuten - Engels - 16 - " + lijstGenres.ToString() + " - 8370";
-
-            DigitaleKopie dk = new DigitaleKopie(titel, jaar, speelduur, taal, leeftijdscategorie, lijstGenres, toegangscode, 3);
-
-            Assert.AreEqual(dkString, dk.ToString());
-        }
     }
 }

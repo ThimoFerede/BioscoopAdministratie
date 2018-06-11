@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BioscoopAdministration.Producten
 {
+    [Serializable]
     public class Bestelling : IPrice, IInfo
     {
         public Persoon Klant { get; private set; }
