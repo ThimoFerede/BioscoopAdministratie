@@ -39,7 +39,7 @@ namespace BioscoopAdministration.Producten
 
         public double Price
         {
-            get { return 0; }
+            get { return DigitaleKopie.PrijsPerDag * Einddatum.Subtract(Startdatum).Days; }
         }
         /// <summary>
         /// Maak een uitlening aan
